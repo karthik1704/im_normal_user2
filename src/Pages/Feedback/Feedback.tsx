@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { useDispatch } from "react-redux";
 import { PageLocation } from "../../Common/Components/Components";
 import "./Feedback.scss";
 import { FeedbackForm } from "../../Common/Components/FeedbackForm/FeedbackForm";
+import { resetPostState,  } from "../../Store/Slices/FeedbackForm/FeedbackFormSlice";
 
 const Feedback = () => {
+  const dispatch = useDispatch();
+
+  useEffect(()=>{dispatch(resetPostState())},[dispatch])
+
   return (
     <>
       <Helmet>
