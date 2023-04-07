@@ -1,0 +1,54 @@
+.achievement-counter-individual {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+    padding: 10px;
+    background-color: #133d8f;
+    transition: transform 300ms ease-out;
+    * {
+        color: #fff !important;
+    }
+
+    @media (max-width: 575px) {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    &:hover, &:focus {
+        transform: translateY(-15px);
+    }
+
+    .counter-div {
+        .counter {
+            font-size: 44px;
+            margin: 0;
+            margin-top: 5px;
+        }
+    }
+
+    .content-div {
+        .content {
+            margin: 0;
+            font-size: 17px;
+        }
+    }
+}
+
+.achievement-counter-div {
+    margin: 8px;
+    border-radius: 5px;
+
+    .achievement-counter-heading {
+        text-align: center;
+        margin: 0;
+        padding: 20px 0;
+    }
+    .achievement-counter {
+        padding-bottom: 20px;
+        .col-wrapper-24 {
+            align-items: baseline;
+            @media (max-width: 575px) {
+                row-gap: 20px;
+            }
+        }
+    }
+}

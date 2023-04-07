@@ -1,0 +1,75 @@
+.faculty {
+    margin: 10px;
+    .faculty-card {
+        .img-div {
+            border-radius: 50%;
+            width: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+    
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    
+        .content {
+            // width: 80%;
+            // margin: 0 auto;
+    
+            .name, .company-name {
+                text-align: center;
+            }
+    
+            p {
+                text-align: center;
+                margin: 0;
+            }
+        }
+
+        .modal-trigger-button {
+            text-align: center;
+        }
+    }
+}
+
+.international-faculty {
+    margin-top: 40px;
+}
+
+.industry-experts {
+    background-image: linear-gradient(90deg, rgba(2, 0, 36, 0.6516807407) 0%, #133d91 100%, #00d4ff 100%);
+
+    // padding: 1px;
+    @media (min-width: 768px) {
+        padding: 10px;
+    }
+
+    border-radius: 5px;
+
+    .heading {
+        text-align: center;
+    }
+    .table-div {
+        overflow-x: auto;
+    }
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        tr {
+            &:nth-of-type(odd) {
+                background-color: rgba(2, 0, 36, 0.6516807407);
+
+                td {
+                    color: #ECEFF1;
+                }
+            }
+            td {
+                font-size: 16px;
+                padding: 15px;
+                text-align: center;
+            }
+        }
+    }
+}

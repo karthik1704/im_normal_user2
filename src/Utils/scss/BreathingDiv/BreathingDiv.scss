@@ -1,0 +1,14 @@
+.breathing {
+    display: flex;
+    overflow: hidden;
+    
+    & > div {
+        min-width: 100%;
+        align-self: center;
+
+        position: relative;
+
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}

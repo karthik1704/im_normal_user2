@@ -1,0 +1,36 @@
+.social {
+    max-width: 1140px;
+
+    .gmap-iframe-div {
+        min-width: 100%;
+        min-height: 500px;
+    }
+    
+    .gmap-iframe {
+        min-width: 100%;
+        min-height: 500px;
+    }
+
+    .fb-iframe {
+        min-width: 100%;
+        min-height: 500px;
+    }
+
+    & > div {
+        padding: 19px;
+    }
+
+    @media (min-width: 500px) and (max-width: 767px) {
+        .gmap-iframe-div {
+            min-width: 500px;
+        }
+        
+        .gmap-iframe {
+            min-width: 500px;
+        }
+
+        & > div {
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.downloads {
+    .btn-w {
+        // margin: 20px 0;
+        a {
+            margin: 0;
+            display: inline-block;
+            width: 90%;
+            .icon {
+                font-size: 60px;
+                display: block;
+            }
+            .text {
+                display: block;
+            }
+
+            &.download-link {
+                display: none;
+            }
+        }
+
+        @media (min-width: 992px) {
+            width: 100%;
+            a {
+                width: 100%;
+            }
+        }
+    }
+}

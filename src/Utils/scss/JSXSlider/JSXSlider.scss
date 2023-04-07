@@ -1,0 +1,23 @@
+.jsx-slider {
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    padding: 5px;
+
+    .slider-div {
+        position: relative;
+
+        @media (min-width: 992px) { 
+            min-width: 33.3333%;
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) { 
+            min-width: 50%;
+        }
+
+        @media (max-width: 767px) { 
+            min-width: 100%;
+        }
+    }
+}

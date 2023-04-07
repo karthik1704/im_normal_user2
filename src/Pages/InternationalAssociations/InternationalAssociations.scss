@@ -1,0 +1,71 @@
+.industrial-visits {
+    .gallery-wrapper {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+        border-radius: 5px;
+        padding: 10px;
+
+
+        .ReactGridGallery {
+            overflow: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ReactGridGallery_tile, .ReactGridGallery_tile-viewport {
+            border-radius: 6px;
+            width: 360px;
+            height: unset !important;
+            @media (min-width: 361px) and (max-width: 767px) {
+                width: 360px !important;
+            }
+            @media (max-width: 360px) {
+                width: 100% !important;
+            }
+            img {
+                width: 100% !important;
+            }
+        }
+        .ReactGridGallery_tile {
+            background-color: transparent !important;
+        }
+    }
+}
+
+.univ {
+    > .card-panel {
+        background-image: linear-gradient(90deg, rgba(2, 0, 36, 0.6516807407) 0%, #133d91 100%, #00d4ff 100%);
+        > .heading {
+            color: #fff;
+        }
+    }
+    .univ-card {
+        .img-div {
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+        .heading {
+            margin: 7px;
+            @media (max-width: 767px) {
+                text-align: center;
+            }
+        }
+        .short-content {
+            margin: 7px;
+        }
+        .modal-trigger-button {
+            @media (max-width: 767px) {
+                text-align: center;
+            }
+        }
+    }
+}

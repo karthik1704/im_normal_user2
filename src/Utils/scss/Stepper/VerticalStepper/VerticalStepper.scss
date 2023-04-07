@@ -1,0 +1,86 @@
+@use '../../Color/Color' as _Color;
+
+.stepper-v-w {
+    // DO NOT REMOVE THIS COMMENT
+    // word-wrap: break-word;
+    // word-break: break-all;
+
+    .stepper-v {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 4.3fr;
+
+        &.active {
+            div:not(.stepper-content) {
+                @extend .default-stepper-v-line-active-color;
+
+                &::before {
+                    @extend .default-stepper-v-circle-active-color;
+                }
+            }
+        }
+
+        div:not(.stepper-content) {
+            @extend .default-stepper-v-line-color;
+
+            height: 100%;
+            width: 4px;
+
+            margin: 0 auto;
+
+            &::before {
+                @extend .default-stepper-v-circle-color;
+
+                content: " ";
+                display: inline-block;
+
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+
+                position: relative;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%;
+            }
+        }
+
+        &:first-child {
+            div:not(.stepper-content) {
+                height: 50%;
+
+                position: relative;
+                top: 25%;
+
+                &::before {
+                    transform: translate(-50%, 0);
+                    top: -12px;
+                }
+            }
+        }
+
+        &:last-child {
+            div:not(.stepper-content) {
+                height: 50%;
+
+                position: relative;
+                transform: rotate(180deg);
+                top: -25%;
+
+                &::before {
+                    top: 0px;
+                }
+            }
+        }
+
+        .stepper-content {
+            padding-left: 0.5rem;
+
+            .stepper-heading {
+                overflow-wrap: break-word;
+                word-break: break-all;
+            }
+
+        }
+    }
+}

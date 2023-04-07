@@ -1,0 +1,42 @@
+.dropdown {
+    width: fit-content;
+    height: fit-content;
+
+    > .dropdown-content {
+        box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+    
+        // min-width: 220px;
+        min-width: 100%;
+        padding: 15px 25px 15px 25px;
+    
+        transform: translateY(-10px);
+
+        a {
+            color: black;
+            &:hover {
+                color: #03A9F4;
+            }
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 14px;
+        }
+    }
+
+    .dropdown-content-visible {
+        visibility: visible;
+        transform: translateY(0%);
+    
+        transition: transform 400ms ease;
+    }
+
+    &:hover {
+        > .dropdown-content {
+            @extend .dropdown-content-visible;
+        }
+    }
+}

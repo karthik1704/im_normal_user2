@@ -1,0 +1,58 @@
+.placement-insights {
+    .section-one {
+        padding: 15px;
+    }
+
+    .section-two {
+        background-image: linear-gradient(90deg, rgba(2, 0, 36, 0.6516807407) 0%, #133d91 100%, #00d4ff 100%);
+        .heading-div {
+            * {
+                text-align: center;
+            }
+        }
+        .img-div {
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .section-three {
+        .placement-statistics {
+            background-image: linear-gradient(90deg, rgba(2, 0, 36, 0.6516807407) 0%, #133d91 100%, #00d4ff 100%);
+            .heading {
+                color: #ffffff;
+               text-align: center;
+            }
+    
+            .img-div {
+                max-width: 360px;
+                width: 100%;
+                margin: 0 auto;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .other-charts {        
+            .heading {
+               text-align: center;
+            }
+    
+            .img-div {
+                max-width: 360px;
+                width: 100%;
+                margin: 0 auto;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

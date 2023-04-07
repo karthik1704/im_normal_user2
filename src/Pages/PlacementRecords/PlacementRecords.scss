@@ -1,0 +1,55 @@
+.placement-record-table{
+    margin-bottom: 85px;
+    .placement-record-table-buttons {
+        @media (min-width: 768px) {     
+            width: fit-content;
+            margin: 0 auto;
+        }
+        .button {
+            @media (min-width: 768px) {
+                display: inline-block;
+
+                margin-left: 5px;
+                margin-right: 5px;
+                min-width: inherit;
+            }
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 162px;
+
+            &.active {
+                background-color: #CFD8DC;
+                color: #000;
+            }
+        }
+    }
+}
+
+.placement-record-table-slides {
+    min-width: 0;
+    .card-panel {
+        @media (min-width: 768px) {
+            width: fit-content;
+        }
+        margin: 0 auto;
+    }
+}
+
+.table-one, .table-two {
+    overflow-x: auto;
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        tr:not(:first-of-type) {
+            td {
+                font-size: 12px;
+            }
+        }
+        td {
+            border: 1px solid rgba(0,0,0,.08);
+            padding: 15px;
+            text-align: center;
+        }
+    }
+}

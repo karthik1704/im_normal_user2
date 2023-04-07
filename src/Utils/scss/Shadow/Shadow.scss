@@ -1,0 +1,18 @@
+@mixin dp-generator($dp) {
+    box-shadow: 0px 0px #{$dp}px #{$dp}px #A8A8A8;
+}
+
+$depths: (
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24
+);
+$default-depth: 6;
+
+@each $dp in $depths {
+    .shadow-#{$dp} {
+        @include dp-generator($dp);
+    }
+}
+
+.default-shadow {
+    @include dp-generator($default-depth);
+}

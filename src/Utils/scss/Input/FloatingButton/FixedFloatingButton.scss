@@ -1,0 +1,67 @@
+.button-fixed-flt-wrapper {
+    position: fixed;
+    // min-height: 200px;
+    bottom: 0;
+    right: 0;
+    .button-fixed-flt{
+        z-index: 9999;
+        position: absolute;
+        
+        text-align: center;
+
+        right: 8px;
+        bottom: 30px;
+    
+        width: 65px;
+        height: 65px;
+
+        min-width: unset;
+        min-height: unset;
+
+        border-radius: 50%;
+
+        // keep margin at zero... don't change this even if thanos comes back to life or gilgamesh defeats shirou
+        margin: 0;
+
+        i {
+            font-size: 23px;
+            line-height: 65px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    .button-fixed-flt-small {
+        z-index: 9998;
+        position: absolute;
+
+        text-align: center;
+
+        right: 17px; //initial position x axis = main button x axis (right) + (main cicle radius - small circle radius) 
+        bottom: 39px; //initial position y axis = main button y axis (bottom) + (main cicle radius - small circle radius)
+    
+        width: 50px;
+        height: 50px;
+
+        min-width: unset;
+        min-height: unset;
+        
+        border-radius: 50%;
+
+        transition: transform 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
+
+        // keep margin at zero... don't change this even if game of life season 2 gets released
+        margin: 0;
+    
+        i {
+            font-size: 15px;
+            line-height: 50px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

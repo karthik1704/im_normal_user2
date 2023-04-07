@@ -1,0 +1,35 @@
+.alumni-testimonials {
+    .alumni-testimonial-card {
+        .img-div {
+            border-radius: 50%;
+            width: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+    
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    
+        .content {
+            width: 80%;
+            margin: 0 auto;
+    
+            .name, .company-name {
+                text-align: center;
+            }
+    
+            p {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .modal-trigger-button {
+            text-align: center;
+        }
+    }
+}

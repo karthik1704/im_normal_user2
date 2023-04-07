@@ -1,0 +1,71 @@
+.contact-info-wrapper {
+    width: 95%;
+    margin: 0 auto;
+
+    .card-panel {
+        .title-div {
+            width: fit-content;
+            margin: 0 auto;
+            .icon-div {
+                display: inline-flex;
+                vertical-align: baseline; 
+                width: fit-content;
+    
+                padding: 15px;
+    
+                svg {
+                    font-size: 24px;
+                }
+            }
+    
+            .heading {
+                display: inline-flex;
+                vertical-align: baseline; 
+                width: fit-content;
+            }
+        }
+
+        .address {
+            width: fit-content;
+            margin: 0 auto;
+            // padding: 0 0 0 15px;
+            p {
+                margin: 5px 0;
+            }
+        }
+
+        .contact {
+            width: fit-content;
+            margin: 0 auto;
+            // padding: 0 0 0 15px;
+            p {
+                margin: 5px 0;
+                a {
+                    color: black;
+                }
+            }
+        }
+
+        .mail {
+            width: fit-content;
+            margin: 0 auto;
+            // padding: 0 0 0 15px;
+            p {
+                margin: 5px 0;
+                a {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.contact-img-div {
+    margin: 0 auto;
+    max-width: 767px;
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}

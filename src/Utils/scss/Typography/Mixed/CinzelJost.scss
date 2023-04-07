@@ -1,0 +1,22 @@
+%h1{ font-family: unquote("Cinzel"); font-weight: lighter; font-size: 83px; letter-spacing: -1.5px; margin: 14px 0; }
+%h2{ font-family: unquote("Cinzel"); font-weight: lighter; font-size: 52px; letter-spacing: -0.5px; margin: 14px 0; }
+%h3{ font-family: unquote("Cinzel"); font-weight: normal; font-size: 41px; letter-spacing: 0px; margin: 14px 0; }
+%h4{ font-family: unquote("Cinzel"); font-weight: normal; font-size: 29px; letter-spacing: 0.25px; margin: 14px 0; }
+%h5{ font-family: unquote("Cinzel"); font-weight: normal; font-size: 21px; letter-spacing: 0px; margin: 14px 0; }
+%h6{ font-family: unquote("Cinzel"); font-weight: 500; font-size: 17px; letter-spacing: 0.15px; margin: 14px 0; }
+
+%body1{ font-family: unquote("Jost"); font-weight: normal; font-size: 19px; letter-spacing: 0.5px; }
+%body2{ font-family: unquote("Jost"); font-weight: normal; font-size: 16px; letter-spacing: 0.25px; }
+
+%subtitle1{ font-family: unquote("Jost"); font-weight: normal; font-size: 19px; letter-spacing: 0.15px; }
+%subtitle2{ font-family: unquote("Jost"); font-weight: 500; font-size: 16px; letter-spacing: 0.1px; }
+
+%button{ font-family: unquote("Jost"); font-weight: 500; font-size: 16px; letter-spacing: 1.25px; }
+
+%overline{ font-family: unquote("Jost"); font-weight: normal; font-size: 12px; letter-spacing: 1.5px; }
+
+%caption{ font-family: unquote("Jost"); font-weight: normal; font-size: 14px; letter-spacing: 0.4px; }
+
+%label{ font-family: unquote("Jost"); font-weight: normal; font-size: 16px; letter-spacing: 0.25px; }
+
+%global-default { @extend %body1; }

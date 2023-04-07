@@ -1,0 +1,19 @@
+.splide {
+    .splide__arrow {
+        display: none;
+        // background: #F4511E;
+    }
+    .splide__pagination__page {
+        &:hover {
+            background: #F4511E;
+        }
+        &.is-active {
+            background: #F4511E;
+        }
+    }
+    // &:hover {
+    //     .splide__arrow {
+    //         display: flex;
+    //     }
+    // }
+}

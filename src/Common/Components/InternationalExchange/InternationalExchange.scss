@@ -1,0 +1,15 @@
+.international-exchange {
+    .heading {
+        text-align: center;
+    }
+
+    &-slider {
+        .splide__pagination__page {
+            display: none;
+        }
+
+        .splide__slide {
+            display: flex; align-items: center; justify-content: center;
+        }
+    }
+}

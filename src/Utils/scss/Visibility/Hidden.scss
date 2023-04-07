@@ -1,0 +1,21 @@
+@use '../Grid/Grid.scss' as Grid;
+
+.hide {
+    display: none;
+}
+
+@each $name, $min-px, $max-px in Grid.$screen-size-list-by-device {
+    @media (min-width: $min-px) and (max-width: $max-px) {
+        .hide-on-#{$name} {
+            display: none;
+        }
+    }
+}
+
+@each $name, $min-px, $max-px in Grid.$screen-size-list {
+    @media (min-width: $min-px) and (max-width: $max-px) {
+        .hide-on-#{$name} {
+            display: none;
+        }
+    }
+}

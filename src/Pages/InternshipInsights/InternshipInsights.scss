@@ -1,0 +1,26 @@
+.internship-insights {
+    margin: 10px;
+}
+
+.internship-statistics {
+    > .card-panel {
+        background-image: linear-gradient(90deg, rgba(2, 0, 36, 0.6516807407) 0%, #133d91 100%, #00d4ff 100%);
+
+        .card-panel {
+            background-color: rgba(2, 0, 36, 0.6516807407);
+        }
+    }
+    .heading {
+        text-align: center;
+        color: white;
+    }
+    .img-div {
+        width: 80%;
+        margin: 0 auto;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}

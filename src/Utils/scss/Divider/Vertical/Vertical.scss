@@ -1,0 +1,60 @@
+@use '../../Color/Color.scss';
+
+//wrapper - w
+.divider-vertical-text-w {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 12fr;
+    // grid-template-rows: 100% 100%;
+
+    .divider-vertical {
+        @extend .default-vr-color;
+
+        margin: 0 auto;
+        border-right-width: 1px;
+        border-right-style: solid;
+
+        width: 0%;
+
+        &::after {
+            @extend .default-vr-text-bg-color;
+
+            content: attr(data-content);
+
+            display: block;
+            position: relative;
+
+            text-align: center;
+            word-wrap: break-word;
+
+            top: 50%;
+            left: -35px;
+            transform: translateY(-50%);
+
+            width: 70px;
+            height: fit-content;
+
+            padding: 10px 0;
+        }
+    }
+}
+
+//wrapper - w
+.divider-vertical-w {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 12fr;
+    // grid-template-rows: 100% 100%;
+
+    .divider-vertical {
+        @extend .default-vr-color;
+
+        margin: 0 auto;
+        border-right-width: 1px;
+        border-right-style: solid;
+
+        width: 0%;
+    }
+}

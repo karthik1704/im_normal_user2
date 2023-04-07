@@ -1,0 +1,18 @@
+@use '../Color/Color.scss';
+
+a {
+    @extend .default-anchor-color;
+    text-decoration: none
+}
+
+a:active {
+    @extend .default-anchor-onclick-color;
+}
+
+a:visited {
+    @extend .default-anchor-visited-color;
+}
+
+a:visited:active {
+    @extend .default-anchor-onclick-color;
+}

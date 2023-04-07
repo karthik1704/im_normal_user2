@@ -1,0 +1,65 @@
+.gallery {
+    
+}
+
+.ReactGridGallery {
+    // height: 800px;
+    overflow: auto;
+}
+
+.year-container {
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    .section-wrapper {
+        overflow: hidden;
+    }
+    .year-heading {
+        display: flex;
+        align-items: center;
+
+        cursor: pointer;
+
+        background-image: linear-gradient(90deg, rgba(2, 0, 36, 0.6516807407) 0%, #133d91 100%, #00d4ff 100%);
+        border-radius: 7px;
+
+        h4, > h6 {
+            font-family: unquote("Jost");
+            font-weight: 300;
+            width: fit-content;
+            color: white;
+        }
+
+        .up-down {
+            margin-left: auto;
+        }
+
+        .material-icons {
+            @media (min-width: 768px) {
+                font-size: 29px;
+            }
+
+            padding: 15px;
+            vertical-align: middle;
+            color: white;
+        }
+
+        .button {
+            margin-left: auto;
+            min-width: unset;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    h6 {
+        text-align: center;
+        font-family: unquote("Jost");
+        font-weight: 300;
+    }
+    .section {
+        .ReactGridGallery_tile, .ReactGridGallery_tile-viewport {
+            border-radius: 6px;
+        }
+    }
+}

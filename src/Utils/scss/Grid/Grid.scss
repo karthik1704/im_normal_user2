@@ -1,0 +1,57 @@
+@use 'sass:list';
+
+$col-wrapper-padding: 5px;
+
+%col-wrapper-base {
+    padding: $col-wrapper-padding;
+
+    display: grid;
+    gap: 5px;
+}
+
+$number-of-columns-start: 1;
+$number-of-columns-end: 24;
+
+$screen-size-list: 
+    (xs, 0, 575px),
+    (s, 576px, 767px),
+    (m, 768px, 991px),
+    (l, 992px, 1199px),
+    (xl, 1200px, 100vw);
+
+$screen-size-list-by-device:
+    (mb, 0, 767px),
+    (t, 768px, 991px),
+    (d, 992px, 100vw);
+
+@for $i from $number-of-columns-start through $number-of-columns-end {
+    .col-wrapper-#{$number-of-columns-end - $i + 1} {
+        @extend %col-wrapper-base;
+        grid-template-columns: repeat($number-of-columns-end - $i + 1, minmax(0, #{$i}fr));
+        align-items: center;
+
+        * {
+            word-wrap: break-word;
+        }
+    }
+
+    .col-#{$i} {
+        grid-column: auto / span $i;
+    }
+
+    @each $name, $min-px, $max-px in $screen-size-list {
+        @media (min-width: $min-px) and (max-width: $max-px) {
+            .#{$name}-col-#{$i} {
+                grid-column: auto / span $i;
+            }
+        }
+    }
+
+    @each $name, $min-px, $max-px in $screen-size-list-by-device {
+        @media (min-width: $min-px) and (max-width: $max-px) {
+            .#{$name}-col-#{$i} {
+                grid-column: auto / span $i;
+            }
+        }
+    }
+}

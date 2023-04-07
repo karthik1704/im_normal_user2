@@ -1,0 +1,103 @@
+@mixin dummyMixin() {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    background-color: rgba($color: #000000, $alpha: 0.1);
+}
+
+.hero-slider {
+    .child-container {
+        position: absolute;
+
+        background-color: #000;
+
+        .img-container {
+            background-color: #FFF;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .content {
+            position: absolute;
+            overflow: hidden;
+            width: 50%;
+
+            top: 10%;
+            @media (min-width: 768px) {
+                top: 20%;
+            }
+            @media (min-width: 1136px) {
+                top: 20%;
+            }
+            
+            .heading-div-container {
+                margin-bottom: 5px;
+                .heading-div-dummy {
+                    @include dummyMixin();
+                }
+                .heading-div {
+                    position: relative;
+                    p {
+                        font-size: 48px;
+                        margin: 0;
+                        margin-left: 10px;
+
+                        font-weight: 500;
+                        
+                        @media (max-width: 767px) {
+                            font-size: 24px;
+                        }
+                        @media (min-width: 768px) and (max-width: 991px) {
+                            font-size: 34px;
+                        }
+                        @media (min-width: 992px) {
+                            font-size: 120px;
+                        }
+
+                        color: #283593;
+                    }
+                }
+            }
+
+            .para-div-container {
+                .para-div-dummy {
+                    @include dummyMixin();
+                }
+                .para-div {
+                    position: relative;
+                    p {
+                        margin: 0;
+                        margin-left: 10px;
+
+                        font-weight: 800;
+                        color: #283593;
+
+                        @media (max-width: 767px) {
+                            font-size: 12px;
+                        }
+                        @media (min-width: 768px) and (max-width: 991px) {
+                            font-size: 18px;
+                        }
+                        @media (min-width: 992px) {
+                            font-size: 38px;
+                        }
+                    }
+
+                    button {
+                        margin: 0;
+                        margin-left: 10px;
+                        @media (max-width: 767px) {
+                            font-size: 12px;
+                            padding: 0px;
+                            min-height: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

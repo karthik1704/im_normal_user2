@@ -1,0 +1,46 @@
+.sidenav, .sidenav-submenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    
+    width: 65vw;
+    // height: 100vh; use window.innerHeight
+
+    transform: translateX(-100%);
+    transition: transform 300ms ease-out;
+
+    background-color: #263238;
+
+    z-index: 9999;
+
+    overflow: scroll;
+
+    .sidenav-close-button {
+        display: block;
+        margin: 0 0 0 auto;
+        padding: 0;
+
+        min-width: 38px;
+        min-height: unset;
+        height: 34px;
+
+        color: white;
+        background-color: transparent;
+    }
+
+    p {
+        width: fit-content;
+        height: fit-content;
+        // margin: 0 18px;
+        // padding: 10px;
+
+        font-weight: 500;
+    }
+    a {
+        color: white;
+    }
+}

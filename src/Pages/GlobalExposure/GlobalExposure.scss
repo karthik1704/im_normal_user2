@@ -1,0 +1,38 @@
+.global-exposure {
+    .global-exposure-testimonials {
+        > .card-panel {
+            .heading {
+                text-align: center;
+                color: #fff;
+            }
+            background-image: linear-gradient(90deg, rgba(2, 0, 36, 0.6516807407) 0%, #133d91 100%, #00d4ff 100%);
+        }
+    }
+    .gallery-wrapper {
+        .ReactGridGallery {
+            overflow: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ReactGridGallery_tile, .ReactGridGallery_tile-viewport {
+            border-radius: 6px;
+            width: 360px;
+            height: unset !important;
+            @media (min-width: 361px) and (max-width: 767px) {
+                width: 360px !important;
+            }
+            @media (max-width: 360px) {
+                width: 100% !important;
+            }
+            img {
+                width: 100% !important;
+            }
+        }
+        .ReactGridGallery_tile {
+            background-color: transparent !important;
+        }
+    }
+}

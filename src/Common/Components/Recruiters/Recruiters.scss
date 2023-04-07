@@ -1,0 +1,28 @@
+.recruiters {
+    // max-width: 768px;
+    margin: 0 auto;
+    // .img-wrapper {
+    //     // display: flex;
+    //     width: fit-content;
+    //     margin: 0 auto;
+    //     .img-div {
+    //         display: inline-block;
+    //         margin: 0 auto;
+    //         max-width: 100px;
+    //         min-width: 50px;
+
+    //         vertical-align: middle;
+    //         img {
+    //             width: 100%;
+    //         }
+    //     }
+    // }
+
+    .img-div {
+        width: 100%;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

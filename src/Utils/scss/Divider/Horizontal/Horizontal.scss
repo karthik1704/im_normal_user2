@@ -1,0 +1,48 @@
+@use '../../Color/Color.scss' as _Color;
+
+.divider-text-hr {
+    border: 0;
+
+    text-align: center;
+
+    &:before {
+        @extend .default-hr-color;
+
+        content: "";
+        display: block;
+        height: 1px;
+        transform: translateY(9px);
+    }
+
+    &:after {
+        @extend .default-hr-text-bg-color;
+
+        content: attr(data-content);
+        display: inline-block;
+        white-space: pre;
+        position: relative;
+        padding: 0 10px;
+    }
+}
+
+.divider-hr {
+    border: 0;
+    text-align: center;
+
+    &:before {
+        @extend .default-hr-color;
+
+        content: "";
+        display: block;
+        height: 1px;
+        transform: translateY(9px);
+    }
+
+    &:after {
+        @extend .default-hr-text-bg-color;
+
+        content: "";
+        display: inline-block;
+        position: relative;
+    }
+}

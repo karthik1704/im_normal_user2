@@ -1,0 +1,23 @@
+.jsx-modal {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+
+    .content-panel {
+        overflow-y: auto;
+        max-width: 768px;
+        margin: 0 auto;
+        max-height: 80%;
+    }
+    .button-div {
+        max-width: 768px;
+        margin: 0 auto;
+
+        .button {
+            min-height: unset;
+            line-height: 32px;
+        }
+    }
+}

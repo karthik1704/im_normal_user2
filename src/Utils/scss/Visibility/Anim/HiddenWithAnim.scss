@@ -1,0 +1,34 @@
+//hidden with animation is generic
+//applies to all screen sizes
+
+.hide-a-l {
+    animation: to-left 1s 1 cubic-bezier(0.645, 0.045, 0.355, 1) ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes to-left {
+    from {
+        visibility: visible;
+        transform: translateX(0%);
+    }
+    to {
+        visibility: hidden;
+        transform: translateX(-110%);
+    }
+}
+
+.hide-a-r {
+    animation: to-right 1s 1 cubic-bezier(0.645, 0.045, 0.355, 1) ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes to-right {
+    from {
+        visibility: visible;
+        transform: translateX(0%);
+    }
+    to {
+        visibility: hidden;
+        transform: translateX(110%);
+    }
+}

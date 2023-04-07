@@ -1,0 +1,34 @@
+//shown with animation is generic
+//applies to all screen sizes
+
+.show-a-l {
+    animation: from-left 1s 1 cubic-bezier(0.645, 0.045, 0.355, 1) ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes from-left {
+    from {
+        visibility: visible;
+        transform: translateX(-110%);
+    }
+    to {
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+.show-a-r {
+    animation: from-right 1s 1 cubic-bezier(0.645, 0.045, 0.355, 1) ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes from-right {
+    from {
+        visibility: visible;
+        transform: translateX(110%);
+    }
+    to {
+        visibility: visible;
+        transform: translateX(0);
+    }
+}

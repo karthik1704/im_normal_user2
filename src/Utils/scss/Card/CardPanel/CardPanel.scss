@@ -1,0 +1,23 @@
+@use '../../Color/Color' as _Color;
+@use '../../Typography/Typography' as Typography;
+@use '../../Shadow/Shadow' as Shadow;
+
+.card-panel {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 3px; 
+
+    @extend .default-bg-color;
+    @extend .default-shadow;
+
+    .card-title, h6 {
+        @extend .h6;
+        @extend .default-color;
+    }
+
+    .card-content, p {
+        @extend .body2;
+        @extend .default-color;
+    }
+}
+

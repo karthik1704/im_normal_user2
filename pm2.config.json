@@ -1,0 +1,13 @@
+{
+  "apps" : [
+    {
+      "name"      : "normal-user-webapp",
+      "script"    : "npx",
+      "interpreter": "none",
+      "args": "serve ./build -p 3000 -s",
+      "error_file": "/var/log/pm2/err.log",
+      "out_file": "/var/log/pm2/out.log",
+      "log_file": "/var/log/pm2/pm2.log"
+    }
+  ]
+}

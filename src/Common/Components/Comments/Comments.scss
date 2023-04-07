@@ -1,0 +1,130 @@
+.comments {
+    width: 100%;
+
+    .submit-notif {
+        font-size: 18px;
+        font-weight: 600;
+        color: #262626;
+        text-align: center;
+
+        &.failed {
+            color: #133d91;
+        }
+    }
+
+    .comment-list-item {
+        padding: 15px;
+        background-color: rgba(0,0,0,.04);
+        &:nth-of-type(odd) {
+            background-color: rgba(0,0,0,.02);
+        }
+
+        .poster-name {
+            span {
+                display: inline-flex; justify-content: center; align-items: center;
+                background-color: #262626;
+                color: #fff;
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+                margin: 0px 15px 15px 15px;
+            }
+        }
+        .poster-comment {
+            margin: 15px;
+
+            p {
+                white-space: pre;
+            }
+        }
+        .poster-votes {
+            margin: 15px;
+            display: flex; justify-content: left; align-items: center;
+
+            > .d {
+                width: 10px;
+                height: 10px;
+
+                .divider-vertical {
+                    border-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+            .votes {
+                color: rgba(0, 0, 0, 0.5);
+                margin: 0;
+            }
+
+            .button {
+                &.active {
+                    color: #1976D2;
+                }
+            }
+        }
+    }
+    
+    .new-comment-form {
+        .col-wrapper-7 {
+            align-items: unset;
+        }
+    }
+    
+    .form-div {    
+        h3 {
+            font-weight: 500;
+        }
+    }
+    
+    .title {
+        background-color: #133d91;
+        padding: 15px;
+
+        h6 {
+            font-weight: 500;
+            font-size: 22px;
+            letter-spacing: 0.15px;
+            margin: 14px 0;
+            color: #fff;
+        }
+    }
+    
+    form {    
+        .input-div {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    
+        button {
+            width: 100px;
+            height: 58px;
+    
+            background-color: #133d91;
+            color: #ffffff;
+    
+            font-size: 18px;
+            border-radius: 0;
+        
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+    
+        .textarea {
+            padding-bottom: 3.62rem;
+        }
+    
+        textarea {
+            min-height: 6rem;
+            border-color: transparent;
+        }
+    
+        div:not(:last-of-type):not(.error-div):not(.new-comment-form-notified-div) {
+            border: 1px solid rgba($color: #E7EBF0, $alpha: 1) ;
+        }
+    
+        .error-div{
+            p {
+                color: #D50000;
+            }
+        }
+    }
+}

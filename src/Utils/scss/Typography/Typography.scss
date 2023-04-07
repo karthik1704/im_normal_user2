@@ -1,0 +1,51 @@
+// @use 'Mixed/CinzelJost.scss';
+// @use 'Mixed/TekoHeebo.scss';
+// @use 'Heebo.scss';
+// @use 'Teko.scss';
+// @use 'Raleway.scss';
+@use 'FiraSans.scss';
+
+h1 { @extend %h1; }
+.h1 { @extend %h1; }
+
+h2 { @extend %h2; }
+.h2 { @extend %h2; }
+
+h3 { @extend %h3; }
+.h3 { @extend %h3; }
+
+h4 { @extend %h4; }
+.h4 { @extend %h4; }
+
+h5 { @extend %h5; }
+.h5 { @extend %h5; }
+
+h6 { @extend %h6; }
+.h6 { @extend %h6; }
+
+body { @extend %body2; }
+.body2 { @extend %body2 !optional; }
+
+.body1 { @extend %body1; }
+
+// button { @extend %button; }
+.button { @extend %button; }
+
+sub { @extend %subtitle2; }
+.sub2 { @extend %subtitle2; }
+
+.sub1 { @extend %subtitle1; }
+
+caption { @extend %caption; }
+.caption { @extend %caption; }
+
+.overline { @extend %overline; }
+
+label { @extend %label; }
+
+body,html { @extend %global-default; }
+
+
+@mixin sub2 {
+    @extend %subtitle2 !optional;
+}

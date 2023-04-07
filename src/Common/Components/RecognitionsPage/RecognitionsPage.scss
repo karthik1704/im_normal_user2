@@ -1,0 +1,57 @@
+.recognitions-page {
+    .recognitions-page-heading {
+        margin: 0;
+        @media (max-width: 991px) {
+            display: inline-block;
+            width: fit-content;
+        }
+
+        &:not(:last-of-type) {
+            @media (max-width: 991px) {
+                white-space: pre-wrap;
+                &::after {
+                    content: "\0020";
+                }
+            }
+        }
+    }
+}
+
+.recognitions-achivement-card {
+    .card-panel {
+        .title-div {
+            img {
+                @media (min-width: 991px) {
+                    vertical-align: bottom;
+                    display: inline-block;
+                }
+                display: block;
+                margin: 0 auto;
+                width: 45px;
+            }
+            p {
+                margin: 0;
+                text-align: center;
+
+                @media (min-width: 991px) {
+                    vertical-align: bottom;
+                    display: inline-block;
+                    padding-left: 7px;
+                    text-align: unset;
+                }
+            }
+        }
+        .content-div {
+            width: fit-content;
+            margin-top: 15px;
+
+            @media (max-width: 991px) {
+                margin: 0 auto;
+            }
+            p {
+                margin: 0;
+                width: fit-content;
+            }
+        }
+    }
+}

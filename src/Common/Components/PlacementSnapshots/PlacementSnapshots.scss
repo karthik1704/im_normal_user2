@@ -1,0 +1,52 @@
+.placement-snapshots {
+    .splide__pagination__page {
+        display: none;
+    }
+}
+
+.placement-snapshot-card {
+
+    .card-panel {
+        width: 98%;
+    }
+
+    
+    .img-div {
+        border-radius: 50%;
+        width: 50%;
+        margin: 0 auto;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .company-img-div {
+        width: 60%;
+        margin: 0 auto;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .content {
+        width: 80%;
+        margin: 0 auto;
+
+        .name {
+            text-align: center;
+        }
+
+        p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}

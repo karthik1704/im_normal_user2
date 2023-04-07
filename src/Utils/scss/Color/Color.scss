@@ -1,0 +1,486 @@
+@use 'sass:map';
+
+@use 'Amber/Amber' as _Amber;
+@use 'Blue/Blue' as _Blue;
+@use 'BlueGray/BlueGray' as _BlueGray;
+@use 'Brown/Brown' as  _Brown;
+@use 'Cyan/Cyan' as _Cyan;
+@use 'DeepOrange/DeepOrange' as _DeepOrange;
+@use 'DeepPurple/DeepPurple' as _DeepPurple;
+@use 'Gray/Gray' as _Gray;
+@use 'Green/Green' as _Green;
+@use 'Indigo/Indigo' as _Indigo;
+@use 'LightBlue/LightBlue' as _LightBlue;
+@use 'LightGreen/LightGreen' as _LightGreen;
+@use 'Lime/Lime' as _Lime;
+@use 'Orange/Orange' as _Orange;
+@use 'Pink/Pink' as _Pink;
+@use 'Purple/Purple' as _Purple;
+@use 'Red/Red' as _Red;
+@use 'Teal/Teal' as _Teal;
+@use 'Yellow/Yellow' as _Yellow;
+
+$white-black-text: (
+    "white": #FFFFFF
+);
+
+$black-white-text: (
+    "black": #000000
+);
+
+$color-black-text: (
+    _Amber.$amber-black-text,
+    _Blue.$blue-black-text,
+    _BlueGray.$blue-gray-black-text,
+    _Brown.$brown-black-text,
+    _Cyan.$cyan-black-text,
+    _DeepOrange.$deep-orange-black-text,
+    _DeepPurple.$deep-purple-black-text,
+    _Gray.$gray-black-text,
+    _Green.$green-black-text,
+    _Indigo.$indigo-black-text,
+    _LightBlue.$light-blue-black-text,
+    _LightGreen.$light-green-black-text,
+    _Lime.$lime-black-text,
+    _Orange.$orange-black-text,
+    _Pink.$pink-black-text,
+    _Purple.$purple-black-text,
+    _Red.$red-black-text,
+    _Teal.$teal-black-text,
+    _Yellow.$yellow-black-text,
+    $white-black-text,
+);
+
+$color-white-text: (
+    _Blue.$blue-white-text,
+    _BlueGray.$blue-gray-white-text,
+    _Brown.$brown-white-text,
+    _Cyan.$cyan-white-text,
+    _DeepOrange.$deep-orange-white-text,
+    _DeepPurple.$deep-purple-white-text,
+    _Gray.$gray-white-text,
+    _Green.$green-white-text,
+    _Indigo.$indigo-white-text,
+    _LightBlue.$light-blue-white-text,
+    _LightGreen.$light-green-white-text,
+    _Lime.$lime-white-text,
+    _Orange.$orange-white-text,
+    _Pink.$pink-white-text,
+    _Purple.$purple-white-text,
+    _Red.$red-white-text,
+    _Teal.$teal-white-text,
+    $black-white-text,
+);
+
+$input-text-type-list: (text, email, password, number, file);
+
+@each $color in $color-black-text {
+    @each $name, $code in $color {
+        $default-text-color: #000000;
+
+        .#{$name} {
+            color: $code 
+        }
+        .bg-#{$name} {
+            background-color: $code ;
+            color: $default-text-color ;
+        }
+        .border-#{$name} {
+            border-color: $code ;
+        }
+
+        .button {
+            &.#{$name} {
+                color: $code 
+            }
+            &.bg-#{$name} {
+                background-color: $code ;
+                color: $default-text-color ;
+            }
+            &.border-#{$name} {
+                border-color: $code ;
+            }
+
+            &.focus-#{$name} {
+                &:focus {
+                    box-shadow: 0px 0px 2px 2px $code;
+                }
+            }
+        }
+
+        .input-div {
+            &.#{$name} {
+                color: $code 
+            }
+            &.bg-#{$name} {
+                background-color: $code ;
+                color: $default-text-color ;
+            }
+            &.border-#{$name} {
+                border-color: $code ;
+            }
+
+            @each $input-type in $input-text-type-list {
+                input[type="#{$input-type}"] {
+                    &.#{$name} {
+                        color: $code 
+                    }
+                    &.bg-#{$name} {
+                        background-color: $code ;
+                        color: $default-text-color ;
+                    }
+                    &.border-#{$name} {
+                        border-color: $code ;
+                    }
+                }
+            }
+
+            textarea, h6, .select-div, select {
+                &.#{$name} {
+                    color: $code 
+                }
+                &.bg-#{$name} {
+                    background-color: $code ;
+                    color: $default-text-color ;
+                }
+                &.border-#{$name} {
+                    border-color: $code ;
+                }
+            }
+        }
+
+        
+        .card-panel {
+            &.#{$name} {
+                color: $code 
+            }
+            &.bg-#{$name} {
+                background-color: $code ;
+                color: $default-text-color ;
+            }
+            &.border-#{$name} {
+                border-color: $code ;
+            }
+        }
+    }
+    
+    @each $name, $code in $color {
+        $default-text-color: #000000;
+
+        %#{$name} {
+            color: $code
+        }
+        %bg-#{$name} {
+            background-color: $code;
+            color: $default-text-color;
+        }
+        %border-#{$name} {
+            border-color: $code;
+        }
+    }
+}
+
+@each $color in $color-white-text {
+    @each $name, $code in $color {
+        $default-text-color: #FFFFFF;
+
+        .#{$name} {
+            color: $code 
+        }
+        .bg-#{$name} {
+            background-color: $code ;
+            color: $default-text-color ;
+        }
+        .border-#{$name} {
+            border-color: $code ;
+        }
+
+        .button {
+            &.#{$name} {
+                color: $code 
+            }
+            &.bg-#{$name} {
+                background-color: $code ;
+                color: $default-text-color ;
+            }
+            &.border-#{$name} {
+                border-color: $code ;
+            }
+
+            &.focus-#{$name} {
+                &:focus {
+                    box-shadow: 0px 0px 2px 2px $code;
+                }
+            }
+        }
+
+        .input-div {
+            &.#{$name} {
+                color: $code 
+            }
+            &.bg-#{$name} {
+                background-color: $code ;
+                color: $default-text-color ;
+            }
+            &.border-#{$name} {
+                border-color: $code ;
+            }
+
+            @each $input-type in $input-text-type-list {
+                input[type="#{$input-type}"] {
+                    &.#{$name} {
+                        color: $code 
+                    }
+                    &.bg-#{$name} {
+                        background-color: $code ;
+                        color: $default-text-color ;
+                    }
+                    &.border-#{$name} {
+                        border-color: $code ;
+                    }
+                }
+            }
+
+            textarea, .select-div, select {
+                &.#{$name} {
+                    color: $code 
+                }
+                &.bg-#{$name} {
+                    background-color: $code ;
+                    color: $default-text-color ;
+                }
+                &.border-#{$name} {
+                    border-color: $code ;
+                }
+            }
+        }
+
+        .card-panel {
+            &.#{$name} {
+                color: $code 
+            }
+            &.bg-#{$name} {
+                background-color: $code ;
+                color: $default-text-color ;
+            }
+            &.border-#{$name} {
+                border-color: $code ;
+            }
+        }
+    }
+
+    @each $name, $code in $color {
+        $default-text-color: #FFFFFF;
+
+        %#{$name} {
+            color: $code
+        }
+        %bg-#{$name} {
+            background-color: $code;
+            color: $default-text-color;
+        }
+        %border-#{$name} {
+            border-color: $code;
+        }
+    }
+}
+
+@function getColorCode($color-name) {
+    @each $color in $color-black-text {
+        @if (map.get($color, $color-name)) {
+            @return map.get($color, $color-name);
+        }
+    }
+    @each $color in $color-white-text {
+        @if (map.get($color, $color-name)) {
+            @return map.get($color, $color-name);
+        }
+    }
+    @error "Color code not found";
+}
+
+$valid-color-name: "green-a700";
+$invalid-color-name: "red-500";
+
+$default-color-name: "black";
+$default-bg-color-name: "white";
+
+$default-border-color-name: "gray-900";
+
+$default-hover-color-name: "gray-400";
+$default-click-color-name: "gray-700";
+
+$default-hr-bg-color-name: "white";
+$default-hr-color-name: "black";
+
+$default-vr-bg-color-name: "white";
+$default-vr-color-name: "black";
+
+$default-anchor-color-name: "light-blue-500";
+$default-anchor-onclick-color-name: "blue-200";
+$default-anchor-visited-color-name: "purple-900";
+
+$default-stepper-h-circle-color-name: "gray-800";
+$default-stepper-h-circle-active-color-name: "amber-500";
+$default-stepper-h-line-color-name: "gray-800";
+$default-stepper-h-line-active-color-name: "amber-500";
+
+$default-stepper-v-circle-color-name: "gray-800";
+$default-stepper-v-circle-active-color-name: "black";
+$default-stepper-v-line-color-name: "gray-800";
+$default-stepper-v-line-active-color-name: "black";
+
+@mixin bg-color-mixin($color-name) {
+    @each $color in $color-black-text {
+        @if (map.get($color, $color-name)) {
+            background-color: map.get($color, $color-name);
+            color: #000;
+        }
+    }
+    @each $color in $color-white-text {
+        @if (map.get($color, $color-name)) {
+            background-color: map.get($color, $color-name);
+            color: #fff;
+        }
+    }
+}
+
+@mixin color-mixin($color-name) {
+    @each $color in $color-black-text {
+        @if (map.get($color, $color-name)) {
+            color: map.get($color, $color-name);
+        }
+    }
+    @each $color in $color-white-text {
+        @if (map.get($color, $color-name)) {
+            color: map.get($color, $color-name);
+        }
+    }
+}
+
+@mixin border-color-mixin($color-name) {
+    @each $color in $color-black-text {
+        @if (map.get($color, $color-name)) {
+            border-color: map.get($color, $color-name);
+        }
+    }
+    @each $color in $color-white-text {
+        @if (map.get($color, $color-name)) {
+            border-color: map.get($color, $color-name);
+        }
+    }
+}
+
+.valid-bg-color {
+    @include bg-color-mixin($valid-color-name);
+}
+.valid-color {
+    @include color-mixin($valid-color-name);
+}
+.valid-border-color {
+    @include border-color-mixin($valid-color-name);
+}
+@mixin valid-border-color {
+    @include border-color-mixin($valid-color-name);
+}
+
+.invalid-bg-color {
+    @include bg-color-mixin($invalid-color-name);
+}
+.invalid-color {
+    @include color-mixin($invalid-color-name);
+}
+.invalid-border-color {
+    @include border-color-mixin($invalid-color-name);
+}
+@mixin invalid-border-color {
+    @include border-color-mixin($invalid-color-name);
+}
+
+.default-bg-color {
+    @include bg-color-mixin($default-bg-color-name);
+}
+@mixin default-bg-color {
+    @include bg-color-mixin($default-bg-color-name);
+}
+.default-color {
+    @include color-mixin($default-color-name);
+}
+@mixin default-color {
+    @include border-color-mixin($default-color-name);
+}
+.default-border-color {
+    @include border-color-mixin($default-border-color-name);
+}
+@mixin default-border-color {
+    @include border-color-mixin($default-border-color-name);
+}
+
+
+// I feel lazy and extend just works fine for rest of the code... if this damn extend breaks something, just use
+// the mixin like above ( e.g.: .default-border-color )
+.default-hover-color {
+    @extend %bg-#{$default-hover-color-name} ;
+}
+@mixin default-hover-color($text-color) {
+    background-color: getColorCode($default-hover-color-name);
+    color: $text-color;
+}
+.default-click-color {
+    @extend %bg-#{$default-click-color-name} ;
+}
+@mixin default-click-color($text-color) {
+    background-color: getColorCode($default-click-color-name);
+    color: $text-color;
+}
+
+
+.default-hr-text-bg-color {
+    @extend %bg-#{$default-hr-bg-color-name} ;
+}
+.default-hr-color {
+    @extend %bg-#{$default-hr-color-name} ;
+}
+
+.default-vr-text-bg-color {
+    @extend %bg-#{$default-vr-bg-color-name} ;
+}
+.default-vr-color {
+    @extend %border-#{$default-vr-color-name} ;
+}
+
+.default-anchor-color {
+    @extend %#{$default-anchor-color-name} ;
+}
+.default-anchor-onclick-color {
+    @extend %#{$default-anchor-onclick-color-name} ;
+}
+.default-anchor-visited-color {
+    @extend %#{$default-anchor-visited-color-name} ;
+}
+
+.default-stepper-h-circle-color {
+    @extend %bg-#{$default-stepper-h-circle-color-name} ;
+}
+.default-stepper-h-circle-active-color {
+    @extend %bg-#{$default-stepper-h-circle-active-color-name} ;
+}
+.default-stepper-h-line-color {
+    @extend %bg-#{$default-stepper-h-line-color-name} ;
+}
+.default-stepper-h-line-active-color {
+    @extend %bg-#{$default-stepper-h-line-active-color-name} ;
+}
+
+.default-stepper-v-circle-color {
+    @extend %bg-#{$default-stepper-v-circle-color-name} ;
+}
+.default-stepper-v-circle-active-color {
+    @extend %bg-#{$default-stepper-v-circle-active-color-name} ;
+}
+.default-stepper-v-line-color {
+    @extend %bg-#{$default-stepper-v-line-color-name} ;
+}
+.default-stepper-v-line-active-color {
+    @extend %bg-#{$default-stepper-v-line-active-color-name} ;
+}

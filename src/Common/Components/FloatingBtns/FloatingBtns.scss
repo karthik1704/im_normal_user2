@@ -1,0 +1,16 @@
+.floating-btns {
+    position: fixed;
+    z-index: 999998;
+    top: 50%;
+    right: -112px;
+    transform: translateY(-50%) rotateZ(270deg);
+
+    @media (max-width: 767px) {
+        right: -119px;
+        transform: translateY(0%) rotateZ(270deg) scale(0.7);
+    }
+
+    .button {
+        margin: 0 5px;
+    }    
+}

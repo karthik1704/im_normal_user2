@@ -1,0 +1,60 @@
+@use '../../Color/Color' as _Color;
+
+.button {
+    display: inline-block;
+
+    margin: 5px 5px;
+    padding: 1px 1rem 0 1rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    //the following three commented lines caused bugs in some mobile screens... avoid using them as much as possible
+    // white-space: normal;
+    // word-wrap: break-word;
+    // word-break: break-all;
+
+    height: fit-content;
+    min-height: 2.1rem;
+
+    min-width: 5rem;
+
+    transition: all 200ms linear;
+
+    // @extend .default-bg-color; // this line is causing problems with other color classes when used on anchor tags
+    // @extend .default-border-color;
+
+    * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    i {
+        margin-top: -2px;
+    }
+
+    @media (pointer: fine) {
+        &:hover {
+            @include _Color.default-hover-color(black);
+            cursor: pointer;
+        }
+    }
+
+    &:active {
+        @include _Color.default-click-color(white);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 2px 2px #FF009D;
+        border-color: #FF009D;
+    }
+}
+
+.button {
+    width: fit-content;
+    line-height: 37px;
+}
+
+.button-block-wrapper {
+    width: fit-content;
+}

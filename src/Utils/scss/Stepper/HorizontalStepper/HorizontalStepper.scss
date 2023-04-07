@@ -1,0 +1,83 @@
+@use '../../Color/Color' as _Color;
+
+.stepper-h-w{
+    .stepper-h {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+        
+        height: 37px;
+        
+        div {
+            &::before {
+                content: "";
+                display: block;
+
+                @extend .default-stepper-h-circle-color;
+
+                width: 22px;
+                height: 22px;
+                
+                margin: 5px auto;
+                border-radius: 50%;
+            }
+    
+            &:first-of-type::after {
+                content: " ";
+                display: block;
+
+                @extend .default-stepper-h-line-color;
+
+                width: 50%;
+                height: 4px;
+
+                position: relative;
+                top: -50%;
+                left: 50%;
+            }
+    
+            &::after {
+                content: " ";
+                display: block;
+
+                @extend .default-stepper-h-line-color;
+
+                width: 100%;
+                height: 4px;
+
+                position: relative;
+                top: -50%;
+            }
+    
+            &:last-of-type::after {
+                content: " ";
+                display: block;
+
+                width: 50%;
+                height: 4px;
+
+                position: relative;
+                top: -50%;
+            }
+
+            &.active {
+                &:first-of-type::after {
+                    @extend .default-stepper-h-circle-active-color;
+                }
+                &::before {
+                    @extend .default-stepper-h-circle-active-color;
+                }
+                &::after {
+                    @extend .default-stepper-h-circle-active-color;
+                }
+            }
+        }
+    }
+
+    .stepper-h-hd {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+
+        text-align: center;
+        word-wrap: break-word;
+    }
+}

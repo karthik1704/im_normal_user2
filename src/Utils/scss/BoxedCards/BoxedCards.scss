@@ -1,0 +1,32 @@
+.boxed-cards {
+    .col-wrapper-24 {
+        align-items: flex-start;
+        .card-panel-wrapper {
+            padding: 15px;
+
+            .card-panel {
+                opacity: 0;
+                .content-div {
+                    .content {
+                        font-size: 14px;
+                        text-align: center;
+                    }
+                }
+                .img-div {
+                    width: fit-content;
+                    margin: 0 auto;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        object-fit: cover;
+
+                        @media (min-width: 768px) {
+                            max-width: 238px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

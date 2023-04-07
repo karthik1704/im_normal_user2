@@ -1,0 +1,25 @@
+.key-differentiators {
+    .reason {
+        margin: 10px;
+        .heading {
+            text-align: center;
+        }
+        .img-div {
+            width: 75%;
+            max-width: 507px;
+            margin: 0 auto;
+            border-radius: 7px;
+            overflow: hidden;
+
+            box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.4);
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+        .modal-trigger-button {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@use 'Utils/scss/Utils.scss';
+
+// reset global color settings for quilljs
+.ql-editor {
+    p {
+        color: unset;
+    }
+}
+
+.card-panel {
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}

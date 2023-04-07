@@ -1,0 +1,163 @@
+@use '../../Color/Color' as _Color;
+@use '../../Shadow/Shadow';
+@use '../../Typography/Typography' as _Typography;
+
+%label-anim {
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+%icon-anim {
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+%label-moved-up {
+    @extend %label-anim;
+
+    transform: translate(0.5rem, 0.2rem);
+    font-size: 0.8rem;
+    // @extend %subtitle2;
+    @include _Typography.sub2();
+}
+
+%label-default-pos {
+    position: absolute;
+    @extend %label-anim;
+}
+
+%label-default-pos-when-icon-used {
+    position: absolute;
+    transform: translate(2.1rem, 1rem);
+    @extend %label-anim;
+}
+
+%icon-default-pos {
+    position: absolute;
+    transform: translateY(0.8rem);
+    padding: 0 5px;
+    @extend %icon-anim;
+}
+
+%icon-moved-down {
+    transform: translateY(1rem);
+}
+
+%input-text {
+    outline: 0;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-width: 0 0 3px;
+    border-radius: 2px;
+
+    width: 100%;
+    min-height: 2.4rem;
+
+    @include _Color.default-border-color();
+    @extend .body2 !optional;
+    
+    // background-color: transparent;
+
+    box-shadow: none;
+}
+
+%input-text-when-icon-used {
+    padding-left: 2rem; 
+    padding-right: 1.5rem; 
+}
+
+//if you modify the below line, you should also modify $input-text-type-list in Color.scss for specificity reasons
+$input-type-list: (text, email, password, number);
+
+.input-div {
+    // @extend .default-bg-color;
+    @include _Color.default-bg-color();
+    &.select-div {
+        position: relative;
+
+        padding: 12px 0px 0px 0px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        
+        display: grid;
+        grid-template-columns: repeat(1, 12fr);
+        grid-template-rows: 2.4rem 0rem;
+
+        &::after {
+            position: absolute;
+            transform: translateY(1.5rem);
+            right: 8px;
+            /* Styling the down arrow */
+            width: 0;
+            height: 0;
+            padding: 0;
+            content: ' ';
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+        }
+    }
+
+    select {
+        @extend %input-text;
+
+        appearance: none;
+        background-color: transparent;
+
+        padding-top: 5px;
+
+        position: relative;
+        z-index: 1;
+
+        &:focus {
+            &:required {
+                &:invalid {
+                    @extend .invalid-border-color;
+                }
+            }
+        }
+        &:required {
+            &:valid {
+                @extend .valid-border-color;
+            }
+        }
+        &+label {
+            @extend .default-color;
+            @extend %label-default-pos;
+        }
+        &.focus {
+            &+label {
+                @extend %label-moved-up;
+            }
+        }
+
+        //remove autofill background color
+        &:-webkit-autofill {
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    }
+
+    &.icon, .material-icons {
+        line-height: unset;
+        select {
+            @extend %input-text-when-icon-used;
+            &+label {
+                @extend %label-default-pos-when-icon-used;
+            }
+            &.focus {
+                &+label {
+                    @extend %label-moved-up;
+                }
+                &+label+.material-icons {
+                    @extend %icon-moved-down;
+                }
+            }
+            &+label+.material-icons {
+                @extend %icon-default-pos;
+            }
+        }
+    } 
+}

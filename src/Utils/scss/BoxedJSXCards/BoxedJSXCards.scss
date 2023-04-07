@@ -1,0 +1,23 @@
+.boxed-jsx-cards {
+    .col-wrapper-24 {
+        align-items: flex-start;
+        .card-panel-wrapper {
+            padding: 15px;
+
+            > .card-panel {
+                opacity: 0;
+                .content-div {
+                    .content {
+                        font-size: 14px;
+                        text-align: center;
+                    }
+
+                    .content-two {
+                        width: fit-content;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}

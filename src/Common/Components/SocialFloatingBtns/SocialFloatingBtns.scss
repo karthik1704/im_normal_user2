@@ -1,0 +1,35 @@
+.social-floating-btns {
+    position: fixed;
+    z-index: 999998;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    .social-links {
+        background-color: #133d91;
+        border-radius: 6px;
+        text-align: center;
+        display: flex; align-items: center; justify-content: center;
+        flex-direction: column;
+
+        @media (min-width: 768px) and (max-width: 991px){
+            margin-top: 70px;
+        }
+        @media (min-width: 992px) {
+            margin-top: 70px;
+        }
+
+        a {
+            font-size: 24px;
+            margin: 10px;
+            color: white;
+            &:hover {
+                color: #F4511E;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}

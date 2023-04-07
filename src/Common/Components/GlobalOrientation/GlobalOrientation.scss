@@ -1,0 +1,37 @@
+.global-orientation {
+    overflow: hidden;
+
+    .global-orientation-text-wrapper {
+        position: relative;
+        z-index: 1;
+
+        padding: 10px;
+        @media (min-width: 768px) {
+            padding: 50px;
+        }
+        
+        .global-orientation-para-div {
+            // .content {
+            //     @media (min-width: 768px) {
+            //         // width: 50%;
+            //     }
+            // }
+    
+            .button {
+                margin-left: 0;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .big-yt {
+        margin: 30px auto 30px auto;
+        @media (min-width: 768px) {
+            width: 80%;  
+        }
+    
+        iframe {
+            width: 100%;
+        }
+    }
+}
