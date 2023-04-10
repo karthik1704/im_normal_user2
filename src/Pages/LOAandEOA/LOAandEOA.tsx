@@ -8,7 +8,9 @@ import { IPdf } from "../../Common/Api/PdfApi/Types";
 import { PageLocation } from "../../Common/Components/Components";
 import { LOAEOA_DOWNLOADS_FILTER_URL,  } from "../../Common/Globals";
 import { useFetchPdfList } from "../../Common/Hooks/Hooks";
+import { IRequestForm } from "../../Common/Api/Form/Types/Form/Form";
 import LoadingScreenUI, { LOADING_SCREEN } from "../../LoadingScreenUI/LoadingScreenUI";
+import { IApp, unhideAllPagePopupForm } from "../../Store/Slices/App/AppSlice";
 
 import "./LOAandEOA.scss";
 
@@ -16,21 +18,39 @@ interface IDownloadButton {
     pdf: IPdf,
 }
 const DownloadButton = ({pdf}: IDownloadButton) => {
+
     const downloadLinkRef = useRef<HTMLAnchorElement>(null);
+    const [isBtnClicked, setIsBtnClicked] = useState(false);
+    const app = useSelector((state: {app: IApp}) => state.app);
+    const reqFrom = useSelector((state: {requestForm: IRequestForm}) => state.requestForm);
 
     const dispatch = useDispatch();
-   
+    const unhidePopupModal = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setIsBtnClicked(true);
+        dispatch(unhideAllPagePopupForm());
+    }
     const triggerDownload = () => {
         if (!downloadLinkRef.current) return;
         downloadLinkRef.current.click();
     }
 
+    useEffect(() => {
+        if (app.allPagePopupForm.isHiddenPermanent) {
+            setIsBtnClicked(false);
+        }
+    }, [app.allPagePopupForm.isHiddenPermanent]);
 
+    useEffect(() => {
+        if (isBtnClicked && reqFrom.request_states.post.fulfilled) {
+            triggerDownload();
+        }
+    }, [isBtnClicked, reqFrom.request_states.post.fulfilled]);
     
 
     return (
         <>
-            <a href={"#!"} onClick={triggerDownload} className={"button bg-deep-orange-600"}>
+            <a href={"#!"} onClick={unhidePopupModal} className={"button bg-deep-orange-600"}>
                 <span className={"icon"}><FontAwesomeIcon icon={faFilePdf}/></span>
                 <span className={"text"}>{pdf.description}</span>
             </a>
