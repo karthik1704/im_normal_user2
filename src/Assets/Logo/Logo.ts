@@ -1,10 +1,26 @@
 import { IImage } from "../../Utils/js/Utils";
 
-import LogoPng from "./logo.png";
-import TwentyOneYearsLogoPng from "./21_years_logo.png";
+// import LogoPng from "./logo.png";
+import LogoPng from "./aims-ibs-logo-april-2023.png";
+import TwentyThreeYearsLogoPng from "./aims-ibs-23-years-logo-april-2023.png";
 
-import LogoWebp from "./logo.webp";
-import TwentyOneYearsLogoWebp from "./21_years_logo.webp";
+// import LogoWebp from "./logo.webp";
+import LogoWebp from "./aims-ibs-logo-april-2023.webp";
+import TwentyThreeYearsLogoWebp from "./aims-ibs-23-years-logo-april-2023.webp";
 
-export const Logo: IImage = {type: "png", alt: "AIMS IBS", png: LogoPng, webp: LogoWebp, w: 499, h: 406};
-export const TwentyOneYearsLogo: IImage = {type: "png", alt: "Celebrating 21 years in education", png: TwentyOneYearsLogoPng, webp: TwentyOneYearsLogoWebp, w: 500, h: 388};
+export const Logo: IImage = {
+  type: "png",
+  alt: "AIMS IBS",
+  png: LogoPng,
+  webp: LogoWebp,
+  w: 946,
+  h: 752,
+};
+export const TwentyOneYearsLogo: IImage = {
+  type: "png",
+  alt: "Celebrating 23 years in education",
+  png: TwentyThreeYearsLogoPng,
+  webp: TwentyThreeYearsLogoWebp,
+  w: 794,
+  h: 730,
+};

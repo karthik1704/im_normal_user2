@@ -50,7 +50,7 @@ const DownloadButton = ({pdf}: IDownloadButton) => {
 
     return (
         <>
-            <a href={"#!"} onClick={unhidePopupModal} className={"button bg-deep-orange-600"}>
+            <a href={"#!"} onClick={triggerDownload} className={"button bg-deep-orange-600"}>
                 <span className={"icon"}><FontAwesomeIcon icon={faFilePdf}/></span>
                 <span className={"text"}>{pdf.description}</span>
             </a>
