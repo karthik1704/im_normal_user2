@@ -59,7 +59,7 @@ const TopBar = ({ topbarRef }: TopBarParams) => {
                             <div className={"col-14"}>
                                 <p className={"t-align-left indigo-900"}>Ranked Top 20 B Schools In South India By Times of India B School Survey</p>
                                 <p className={"t-align-left indigo-900"}>Best Emerging Business School By World Education Congress & CMO Asia</p>
-                                <p className={"t-align-left indigo-900"}>India's 1st School To Offer Industry Aligned MBA</p>
+                                <p className={"t-align-left indigo-900"}>India's 1st School To Offer Industry Integrated MBA</p>
                             </div>
                         </div>
                     </div>
