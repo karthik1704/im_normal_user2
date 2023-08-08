@@ -44,8 +44,8 @@
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "start": "react-scripts start",
-    "build": "IMAGE_INLINE_SIZE_LIMIT=0 GENERATE_SOURCEMAP=false react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "IMAGE_INLINE_SIZE_LIMIT=0 GENERATE_SOURCEMAP=false  react-scripts build",
     "build-pc": "set \"GENERATE_SOURCEMAP=false\" && set IMAGE_INLINE_SIZE_LIMIT=0 && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
