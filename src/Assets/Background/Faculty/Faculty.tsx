@@ -29,6 +29,11 @@ import FacultyProfHimaDevadasPng from "./Images/Prof_Hima_Devadas.png";
 import FacultyProfKaveriPng from "./Images/Prof_Kaveri.png";
 import FacultyProfSabhyaPng from "./Images/Prof_Sabhya.png";
 
+import FacultyDrHemavatiShiragurPng from "./Images/Dr_Hemavati_Shiragur.png";
+import FacultyPrithwirajDasPng from "./Images/Prithwiraj_Das.png";
+import FacultyProfChitrankaPng from "./Images/Prof_Chitranka.png";
+import FacultyProfSreekanthPng from "./Images/Prof_Sreekanth.png";
+import FacultyRadhaOjhaPng from "./Images/Radha_Ojha.png";
 
 import InternationalFacultyAchuthaPng from "./Images/International/Achutha.png";
 import InternationalFacultyFrancisTanPng from "./Images/International/FRANCIS-TAN.png";
@@ -67,6 +72,12 @@ import FacultyPadaminiWebp from "./Images/Padamini.webp";
 import FacultyProfHimaDevadasWebp from "./Images/Prof_Hima_Devadas.webp";
 import FacultyProfKaveriWebp from "./Images/Prof_Kaveri.webp";
 import FacultyProfSabhyaWebp from "./Images/Prof_Sabhya.webp";
+
+import FacultyDrHemavatiShiragurWebp from "./Images/Dr_Hemavati_Shiragur.webp";
+import FacultyPrithwirajDasWebp from "./Images/Prithwiraj_Das.webp";
+import FacultyProfChitrankaWebp from "./Images/Prof_Chitranka.webp";
+import FacultyProfSreekanthWebp from "./Images/Prof_Sreekanth.webp";
+import FacultyRadhaOjhaWebp from "./Images/Radha_Ojha.webp";
 
 import InternationalFacultyAchuthaWebp from "./Images/International/Achutha.webp";
 import InternationalFacultyFrancisTanWebp from "./Images/International/FRANCIS-TAN.webp";
@@ -317,7 +328,50 @@ const FacultyProfSabhya: IImage = {
   h: 147,
 };
 
+const FacultyDrHemavatiShiragur: IImage = {
+  type: "png",
+  alt: "",
+  png: FacultyDrHemavatiShiragurPng,
+  webp: FacultyDrHemavatiShiragurWebp,
+  w: 147,
+  h: 147,
+};
 
+const FacultyPrithwirajDas: IImage = {
+  type: "png",
+  alt: "",
+  png: FacultyPrithwirajDasPng,
+  webp: FacultyPrithwirajDasWebp,
+  w: 147,
+  h: 147,
+};
+
+const FacultyProfChitranka: IImage = {
+  type: "png",
+  alt: "",
+  png: FacultyProfChitrankaPng,
+  webp: FacultyProfChitrankaWebp,
+  w: 147,
+  h: 147,
+};
+
+const FacultyProfSreekanth: IImage = {
+  type: "png",
+  alt: "",
+  png: FacultyProfSreekanthPng,
+  webp: FacultyProfSreekanthWebp,
+  w: 147,
+  h: 147,
+};
+
+const FacultyRadhaOjha: IImage = {
+  type: "png",
+  alt: "",
+  png: FacultyRadhaOjhaPng,
+  webp: FacultyRadhaOjhaWebp,
+  w: 147,
+  h: 147,
+};
 
 const InternationalFacultyAchutha: IImage = {
   type: "png",
@@ -382,131 +436,26 @@ const FacultyImagesWithContent = [
     contentTwo: "HR & General Management",
   },
   {
-    img: FacultyRavichandra,
+    img: FacultyDrReddy,
     name: "Dr. Ravichandra Reddy",
     contentOne: "M.Com, MBA, PhD",
     contentTwo: "Accounting & Finance",
-  },
-  {
-    img: FacultyKrishna,
-    name: "Dr. R. Krishna",
-    contentOne: "MBA (HR & Marketing)",
-    contentTwo: "M.Phil(Mgmt), Ph.D",
-  },
-  {
-    img: FacultyAshwini,
-    name: "Prof. Ashwini A N",
-    contentOne: "MBA Marketing",
-    contentTwo: "Marketing & HR",
-  },
-  {
-    img: FacultyDeepak,
-    name: "Prof. Deepak N",
-    contentOne: "MBA, UGC(Net)",
-    contentTwo: "Economics & Finance",
+    modalContent: (
+      <>
+        <p>
+          Dr. Ravichandra Reddy completed his master&#39;s degree in both
+          commerce and management and research in the finance domain and has 29
+          years of experience in teaching and research to both undergraduate and
+          postgraduate students in the field of accounting and core finance
+          areas. He has hands-on experience in analyzing financial statements
+          and preparing financial reports for small-scale industries. He has and
+          been guiding students in consultation projects in preparing financial
+          statements and company valuations for start-ups
+        </p>
+      </>
+    ),
   },
 
-  {
-    img: FacultyRohinBhatnagar,
-    name: "Prof. Rohin Bhatnagar",
-    contentOne: "MBA in Marketing, (PhD)",
-    contentTwo: "Marketing & Communication",
-  },
-  {
-    img: FacultyAmbashankar,
-    name: "Dr. M Ambashankar",
-    contentOne:
-      "Qualification: BE,MTech, MBA & PhD Marketing Entrepreunership, Business Ethics & General Mangement",
-    contentTwo: "",
-  },
-  {
-    img: FacultySarabjeet,
-    name: "Prof. Sarabjeet Kaur",
-    contentOne:
-      "Ph.D International Economics, UGC-NET Comprehensive Business Analysis, Global Economic Environment and Managerial Economics",
-    contentTwo: "",
-  },
-  {
-    img: FacultySuresh,
-    name: "Prof. R Suresh",
-    contentOne:
-      "B A., L L.B MBA, pg Dip in Trg and Dev., PG Dip in IR, PG Dip in Lab Laws Recruitment and Selection, Training and Dev., International HRM., Compensation Mgmt, etc Strategic Mgmt., Entrepreneurship and New Venture Creation., Knowledge Mgmt, Services Marketing",
-    contentTwo: "",
-  },
-  {
-    img: FacultyGeethanjali,
-    name: "Dr. Geethanjali Sharma",
-    contentOne: "Qualification: MA, MBA & PhD",
-    contentTwo: "Economics, Project Mangement & HR",
-  },
-
-  {
-    img: FacultyVittal,
-    name: "Prof. Vittal B R",
-    contentOne: "Qualification: MBA,PGDM in Mktg & LLB",
-    contentTwo: "Marketing & Law",
-  },
-  {
-    img: FacultyVisweswara,
-    name: "Prof. Visweswara V Rao",
-    contentOne: "Qualification: MSc, (MPhil) Statistics & Operations Resarch",
-    contentTwo: "",
-  },
-  {
-    img: FacultyYogananthan,
-    name: "Dr. Yogananthan S",
-    contentOne:
-      "M.Sc (Industrial Psychology) MBA (Marketing & HR, MPT PGDHRM, PGDROM, PhD Marketing, HR & Operations",
-    contentTwo: "",
-  },
-  {
-    img: FacultySrinivasan,
-    name: "Prof. R Srinivasan",
-    contentOne:
-      "PGD in International Trade (Indian Institute of Foreign Trade, New Delhi)",
-    contentTwo: "Marketing & International Business",
-  },
-  {
-    img: FacultyKumar,
-    name: "Prof. B.K.Kumar",
-    contentOne: "PGDM -IIM Ahmedabad",
-    contentTwo:
-      "Strategic Management & Business Policy, Sales Mgmt. & Distribution Mgmt.",
-  },
-
-  {
-    img: FacultyManish,
-    name: "Prof. Manish Jha",
-    contentOne: "MBA",
-    contentTwo: "Corporate Trainer & Entrepreneurship Courses",
-  },
-  {
-    img: FacultyDivya,
-    name: "Prof. Divya Kshatriya",
-    contentOne: "B.Sc, MCA, Ph.D. (in-progress)",
-    contentTwo: "IT & IT Related Subjects",
-  },
-  {
-    img: FacultyArchana,
-    name: "Prof. Archana M Nagaraj",
-    contentOne:
-      "PGDM in Marketing, Master of Business Management in Finance. HR & General Management ",
-    contentTwo: "",
-  },
-  {
-    img: FacultyAnjali,
-    name: "Prof. Anjali Bajpai",
-    contentOne:
-      "PG in Hospital Healthcare Management Paramedic in Food Science & Nutrition Health Care Management",
-    contentTwo: "",
-  },
-  {
-    img: FacultyManjunathKoliwad,
-    name: "Dr. Manjunath Koliwad",
-    contentOne: "MBA, PhD (M.Com)",
-    contentTwo: "Marketing, HR and General Management",
-  },
-  //New
   {
     img: FacultyDrAniruddha,
     name: "Dr. Aniruddha T ",
@@ -524,26 +473,7 @@ const FacultyImagesWithContent = [
       </>
     ),
   },
-  {
-    img: FacultyDrReddy,
-    name: "Dr. Ravichandra Reddy",
-    contentOne: "",
-    contentTwo: "",
-    modalContent: (
-      <>
-        <p>
-          Dr. Ravichandra Reddy completed his master's degree in both commerce
-          and management and research in the finance domain and has 29 years of
-          experience in teaching and research to both undergraduate and
-          postgraduate students in the field of accounting and core finance
-          areas. He has hands-on experience in analyzing financial statements
-          and preparing financial reports for small-scale industries. He has and
-          been guiding students in consultation projects in preparing financial
-          statements and company valuations for start-ups.
-        </p>
-      </>
-    ),
-  },
+
   {
     img: FacultyDrVasanthKumar,
     name: "Dr. C. Vasanthakumar",
@@ -579,81 +509,39 @@ const FacultyImagesWithContent = [
       </>
     ),
   },
+
   {
-    img: FacultyIKONADAS,
-    name: "IKONA DAS",
-    contentOne: "M.Com, B.Ed., L.L.B Over 10 years of experience",
-    contentTwo: "Assistant Professor (Accounting & Finance)",
-    modalContent: (
-      <>
-        <p>
-          A dedicated and experienced Assistant Professor in the Department of
-          Commerce, she is driven by a profound commitment to nurturing the
-          young minds of the future. With over a decade of teaching experience
-          at the undergraduate level, her imparts knowledge through
-          bidirectional communication, fostering an engaging and interactive
-          learning environment. Her expertise in critical financial analysis
-          adds a practical dimension to her academic pursuits. Beyond academia,
-          she holds Bachelor's degrees in both Education and Law, reflecting a
-          well-rounded dedication to professional growth and personal
-          fulfilment.
-        </p>
-      </>
-    ),
+    img: FacultyManjunathKoliwad,
+    name: "Dr. Manjunath Koliwad",
+    contentOne: "MBA, PhD (M.Com)",
+    contentTwo: "Marketing, HR and General Management",
   },
+
+  // Prithwiraj Das
   {
-    img: FacultyPadamini,
-    name: "Mrs. Padmini Navilur",
-    contentOne: "M com, K-set  Over 10 years of experience ",
-    contentTwo: "Assistant Professor (Accounting & Finance)",
-    modalContent: (
-      <>
-        <p>
-          Mrs. Padmini Navilur is an assistant professor in the department of
-          commerce. She is a gold medalist and 2nd rank holder in her post
-          graduation at Kuvempu University, Shimoga, Karnataka. Areas of
-          interest are Accounts, Tax and Business Mathematics.
-        </p>
-      </>
-    ),
-  },
-  {
-    img: FacultyProfHimaDevadas,
-    name: "Prof.Hima Devadas",
-    contentOne: "BE. MBA",
+    img: FacultyPrithwirajDas,
+    name: "Dr. Prithwiraj Das",
+    contentOne: "M.B.A, M.A, M.Com",
     contentTwo: "",
     modalContent: (
       <>
         <p>
-          BE. MBA Prof.Hima Devadas is the specialized professor in Finance.
-          Prof.Hima has teaching experience of 4 years during which she taught
-          to PG as well as the UG level. Currently, she is pursuing a Ph.D in
-          Finance and have good contribution in research.
+          Prof. Prithwiraj Das has almost two decades of experience in academics
+          and corporate. He is a research scholar from Kolkata University. He is
+          also certified in Educational Psychology counselor from Stonebridge
+          College, (U.K). Prof. Prithwiraj Das sir has published multiple
+          academic papers across management domain in various national and
+          international high impact journals. He has published 6 books of
+          General Management for MBA and a book for B.Com students.
         </p>
       </>
     ),
   },
-  {
-    img: FacultyProfSabhya,
-    name: "Ms. Sabhya",
-    contentOne: "M com, K-set  Over 2 years of experience",
-    contentTwo: "Assistant Professor (Accounting and Taxation)",
-    modalContent: (
-      <>
-        <p>
-          Ms. Sabhya is an assistant professor in the department of commerce.
-          She presented a paper on "People's Satisfaction Towards E-payment
-          System" and the same was then published in “Asia Pacific Journal of
-          Research.” Areas of interest are Finance, Taxation, and Business
-          Mathematics and statistics.
-        </p>
-      </>
-    ),
-  },
+
   {
     img: FacultyProfKaveri,
     name: "Prof.Kaveri C .S ",
-    contentOne: "",
+    contentOne: "B.A, MBA, MHRM, M,Phil, (Ph.D)",
     contentTwo: "",
     modalContent: (
       <>
@@ -676,6 +564,286 @@ const FacultyImagesWithContent = [
       </>
     ),
   },
+
+  {
+    img: FacultyProfHimaDevadas,
+    name: "Prof.Hima Devadas",
+    contentOne: "BE. MBA",
+    contentTwo: "",
+    modalContent: (
+      <>
+        <p>
+          BE. MBA Prof.Hima Devadas is the specialized professor in Finance.
+          Prof.Hima has teaching experience of 4 years during which she taught
+          to PG as well as the UG level. Currently, she is pursuing a Ph.D in
+          Finance and have good contribution in research.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    img: FacultyPadamini,
+    name: "Mrs. Padmini Navilur",
+    contentOne: "M com, K-set  Over 10 years of experience ",
+    contentTwo: "Assistant Professor (Accounting & Finance)",
+    modalContent: (
+      <>
+        <p>
+        Ms. Padmini Navilur is an Assistant Professor in the department of commerce.
+She is a gold medalist and 2nd rank holder in her post-graduation at Kuvempu University,
+Shimoga, Karnataka, with over 10 years of experience in teaching. Karnataka. Her areas of
+interest are Accounts, Tax and Business Mathematics.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    img: FacultyIKONADAS,
+    name: "Ms. Ikona Das",
+    contentOne: "M.Com, B.Ed., L.L.B Over 10 years of experience",
+    contentTwo: "Assistant Professor (Accounting & Finance)",
+    modalContent: (
+      <>
+        <p>
+          Ms. Ikona Das is an Assistant Professor of Accounting &amp; Finance,
+          in the Department of Commerce; She has over 10 years of experience in
+          teaching. She is driven by a profound commitment to nurturing the
+          young minds of the future. With over a decade of teaching experience
+          at the undergraduate level, her imparts knowledge through
+          bidirectional communication, fostering an engaging and interactive
+          learning environment. Her expertise in critical financial analysis
+          adds a practical dimension to her academic pursuits. Beyond academia,
+          she holds Bachelor&#39;s degrees in both Education and Law, reflecting
+          a well-rounded dedication to professional growth and personal
+          fulfillment.
+        </p>
+      </>
+    ),
+  },
+
+  // Ms. Radha Ojha
+
+  {
+    img: FacultyRadhaOjha,
+    name: "Ms.Radha Ojha ",
+    contentOne: "M.Com, PGDBM",
+    contentTwo: "",
+    modalContent: (
+      <>
+        <p>
+          Ms.Radha Ojha is Assistant Professor of Finance subjects. She is
+          having total 7 years of teaching and corporate work experience.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    img: FacultyProfSabhya,
+    name: "Ms. Sabhya",
+    contentOne: "M com, K-set  Over 2 years of experience",
+    contentTwo: "Assistant Professor (Accounting and Taxation)",
+    modalContent: (
+      <>
+        <p>
+        Ms. Sabhya is an Assistant Professor in the department of commerce. She
+presented a paper on &quot;People&#39;s Satisfaction towards E-payment System&quot; and the same was
+then published in “Asia Pacific Journal of Research.” Her Areas of interest are Finance,
+Taxation, and Business Mathematics and statistics. Ms.Sabhya has 2 years of experience in
+teaching.
+        </p>
+      </>
+    ),
+  },
+
+  // Prof. Chitranka K
+
+  {
+    img: FacultyProfChitranka,
+    name: "Prof. Chitranka K ",
+    contentOne: "Ch.e, Chart P.R",
+    contentTwo: "",
+    modalContent: (
+      <>
+        <p>
+          Professor Chitranka K comes with 3 years of Industry experience and
+          about 1.5 years of academic teaching and Research experience. He is
+          also a Chartered Public Relations practitioner from UK, Chartered
+          Economist from AAFM India, Prince2 Practitioner (UK). Professor
+          Chitranka also has around 13 Research papers in ABDC, UGC and peer
+          reviewed journals.
+        </p>
+      </>
+    ),
+  },
+
+  // Sreekanth
+
+  {
+    img: FacultyProfSreekanth,
+    name: "Prof. Sreekanth. D",
+    contentOne: "MBA-(HR)",
+    contentTwo: "",
+    modalContent: (
+      <>
+        <p>
+          Prof.Sreekanth comes with around 15 Years of Industry Experience
+          especially was one among pioneer in handling Human Resources
+          Management for various companies. Professor Sreekant also comes with
+          productive experience in Operations Management, worked in various
+          sectors like IT, Banking, Manufacturing.
+        </p>
+      </>
+    ),
+  },
+
+  // Hemavati Shiragur
+
+  {
+    img: FacultyDrHemavatiShiragur,
+    name: "Dr. Hemavati Shiragur",
+    contentOne: "MBA, Ph.D",
+    contentTwo: "",
+    modalContent: (
+      <>
+        <p>
+          Dr. Hemavati is the educator, learner, researcher, having experience
+          teaching graduate and postgraduate management program. She holds
+          proficiency in handling academics and administrative activities as an
+          academic coordinator for management courses, along with entailing
+          event management activities like Training / Workshop. Dr.Hemavati has
+          good contribution in the research. Her 5 papers are published in
+          reputed journals.
+        </p>
+      </>
+    ),
+  },
+
+  {
+    img: FacultyAmbashankar,
+    name: "Dr. M Ambashankar",
+    contentOne:
+      "BE,MTech, MBA & PhD Marketing Entrepreunership, Business Ethics & General Mangement",
+    contentTwo: "",
+  },
+
+  {
+    img: FacultyVittal,
+    name: "Prof. Vittal B R",
+    contentOne: "Qualification: MBA,PGDM in Mktg & LLB",
+    contentTwo: "Marketing & Law",
+  },
+
+  {
+    img: FacultyVisweswara,
+    name: "Prof. Visweswara V Rao",
+    contentOne: "Qualification: MSc, (MPhil) Statistics & Operations Resarch",
+    contentTwo: "",
+  },
+
+  // Prof.Manish Jha
+
+  {
+    img: FacultyManish,
+    name: "Prof. Manish Jha",
+    contentOne: "MBA",
+    contentTwo: "Corporate Trainer & Entrepreneurship Courses",
+  },
+
+  {
+    img: FacultyKrishna,
+    name: "Dr. R. Krishna",
+    contentOne: "MBA (HR & Marketing)",
+    contentTwo: "M.Phil(Mgmt), Ph.D",
+  },
+  {
+    img: FacultyAshwini,
+    name: "Prof. Ashwini A N",
+    contentOne: "MBA Marketing",
+    contentTwo: "Marketing & HR",
+  },
+  {
+    img: FacultyDeepak,
+    name: "Prof. Deepak N",
+    contentOne: "MBA, UGC(Net)",
+    contentTwo: "Economics & Finance",
+  },
+
+  {
+    img: FacultyRohinBhatnagar,
+    name: "Prof. Rohin Bhatnagar",
+    contentOne: "MBA in Marketing, (PhD)",
+    contentTwo: "Marketing & Communication",
+  },
+
+  {
+    img: FacultySarabjeet,
+    name: "Prof. Sarabjeet Kaur",
+    contentOne:
+      "Ph.D International Economics, UGC-NET Comprehensive Business Analysis, Global Economic Environment and Managerial Economics",
+    contentTwo: "",
+  },
+  {
+    img: FacultySuresh,
+    name: "Prof. R Suresh",
+    contentOne:
+      "B A., L L.B MBA, pg Dip in Trg and Dev., PG Dip in IR, PG Dip in Lab Laws Recruitment and Selection, Training and Dev., International HRM., Compensation Mgmt, etc Strategic Mgmt., Entrepreneurship and New Venture Creation., Knowledge Mgmt, Services Marketing",
+    contentTwo: "",
+  },
+  {
+    img: FacultyGeethanjali,
+    name: "Dr. Geethanjali Sharma",
+    contentOne: "Qualification: MA, MBA & PhD",
+    contentTwo: "Economics, Project Mangement & HR",
+  },
+
+  {
+    img: FacultyYogananthan,
+    name: "Dr. Yogananthan S",
+    contentOne:
+      "M.Sc (Industrial Psychology) MBA (Marketing & HR, MPT PGDHRM, PGDROM, PhD Marketing, HR & Operations",
+    contentTwo: "",
+  },
+  {
+    img: FacultySrinivasan,
+    name: "Prof. R Srinivasan",
+    contentOne:
+      "PGD in International Trade (Indian Institute of Foreign Trade, New Delhi)",
+    contentTwo: "Marketing & International Business",
+  },
+  {
+    img: FacultyKumar,
+    name: "Prof. B.K.Kumar",
+    contentOne: "PGDM -IIM Ahmedabad",
+    contentTwo:
+      "Strategic Management & Business Policy, Sales Mgmt. & Distribution Mgmt.",
+  },
+
+  {
+    img: FacultyDivya,
+    name: "Prof. Divya Kshatriya",
+    contentOne: "B.Sc, MCA, Ph.D. (in-progress)",
+    contentTwo: "IT & IT Related Subjects",
+  },
+  {
+    img: FacultyArchana,
+    name: "Prof. Archana M Nagaraj",
+    contentOne:
+      "PGDM in Marketing, Master of Business Management in Finance. HR & General Management ",
+    contentTwo: "",
+  },
+  {
+    img: FacultyAnjali,
+    name: "Prof. Anjali Bajpai",
+    contentOne:
+      "PG in Hospital Healthcare Management Paramedic in Food Science & Nutrition Health Care Management",
+    contentTwo: "",
+  },
+
+
+ 
 ];
 
 const InternationalFacultyImagesWithContent = [
