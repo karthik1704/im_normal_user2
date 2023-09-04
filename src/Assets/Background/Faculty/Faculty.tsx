@@ -520,7 +520,7 @@ const FacultyImagesWithContent = [
   // Prithwiraj Das
   {
     img: FacultyPrithwirajDas,
-    name: "Dr. Prithwiraj Das",
+    name: "(Dr.) Prithwiraj Das",
     contentOne: "M.B.A, M.A, M.Com",
     contentTwo: "",
     modalContent: (
@@ -584,7 +584,7 @@ const FacultyImagesWithContent = [
 
   {
     img: FacultyPadamini,
-    name: "Mrs. Padmini Navilur",
+    name: "Ms. Padmini Navilur",
     contentOne: "M com, K-set  Over 10 years of experience ",
     contentTwo: "Assistant Professor (Accounting & Finance)",
     modalContent: (
@@ -663,7 +663,8 @@ teaching.
   {
     img: FacultyProfChitranka,
     name: "Prof. Chitranka K ",
-    contentOne: "Ch.e, Chart P.R",
+    // contentOne: "Ch.e, Chart P.R",
+    contentOne: "Ch.e, Chartered Public Relations Practitioner",
     contentTwo: "",
     modalContent: (
       <>
@@ -758,33 +759,7 @@ teaching.
     contentOne: "MBA (HR & Marketing)",
     contentTwo: "M.Phil(Mgmt), Ph.D",
   },
-  {
-    img: FacultyAshwini,
-    name: "Prof. Ashwini A N",
-    contentOne: "MBA Marketing",
-    contentTwo: "Marketing & HR",
-  },
-  {
-    img: FacultyDeepak,
-    name: "Prof. Deepak N",
-    contentOne: "MBA, UGC(Net)",
-    contentTwo: "Economics & Finance",
-  },
-
-  {
-    img: FacultyRohinBhatnagar,
-    name: "Prof. Rohin Bhatnagar",
-    contentOne: "MBA in Marketing, (PhD)",
-    contentTwo: "Marketing & Communication",
-  },
-
-  {
-    img: FacultySarabjeet,
-    name: "Prof. Sarabjeet Kaur",
-    contentOne:
-      "Ph.D International Economics, UGC-NET Comprehensive Business Analysis, Global Economic Environment and Managerial Economics",
-    contentTwo: "",
-  },
+  
   {
     img: FacultySuresh,
     name: "Prof. R Suresh",
@@ -792,55 +767,7 @@ teaching.
       "B A., L L.B MBA, pg Dip in Trg and Dev., PG Dip in IR, PG Dip in Lab Laws Recruitment and Selection, Training and Dev., International HRM., Compensation Mgmt, etc Strategic Mgmt., Entrepreneurship and New Venture Creation., Knowledge Mgmt, Services Marketing",
     contentTwo: "",
   },
-  {
-    img: FacultyGeethanjali,
-    name: "Dr. Geethanjali Sharma",
-    contentOne: "Qualification: MA, MBA & PhD",
-    contentTwo: "Economics, Project Mangement & HR",
-  },
-
-  {
-    img: FacultyYogananthan,
-    name: "Dr. Yogananthan S",
-    contentOne:
-      "M.Sc (Industrial Psychology) MBA (Marketing & HR, MPT PGDHRM, PGDROM, PhD Marketing, HR & Operations",
-    contentTwo: "",
-  },
-  {
-    img: FacultySrinivasan,
-    name: "Prof. R Srinivasan",
-    contentOne:
-      "PGD in International Trade (Indian Institute of Foreign Trade, New Delhi)",
-    contentTwo: "Marketing & International Business",
-  },
-  {
-    img: FacultyKumar,
-    name: "Prof. B.K.Kumar",
-    contentOne: "PGDM -IIM Ahmedabad",
-    contentTwo:
-      "Strategic Management & Business Policy, Sales Mgmt. & Distribution Mgmt.",
-  },
-
-  {
-    img: FacultyDivya,
-    name: "Prof. Divya Kshatriya",
-    contentOne: "B.Sc, MCA, Ph.D. (in-progress)",
-    contentTwo: "IT & IT Related Subjects",
-  },
-  {
-    img: FacultyArchana,
-    name: "Prof. Archana M Nagaraj",
-    contentOne:
-      "PGDM in Marketing, Master of Business Management in Finance. HR & General Management ",
-    contentTwo: "",
-  },
-  {
-    img: FacultyAnjali,
-    name: "Prof. Anjali Bajpai",
-    contentOne:
-      "PG in Hospital Healthcare Management Paramedic in Food Science & Nutrition Health Care Management",
-    contentTwo: "",
-  },
+  
 
 
  
