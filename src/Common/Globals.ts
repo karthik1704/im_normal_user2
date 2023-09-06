@@ -88,6 +88,10 @@ const ROUTES = {
   FEEDBACK: "/feedback",
   LOAANDEOA: "/loaandeoa",
 
+  CancellationandRefundPolicy: "/cancellationandrefundpolicy",
+  TermsandConditions: "/termsandconditions",
+  PrivacyPolicy: "/privacypolicy",
+
   NOT_FOUND: "/404",
 };
 

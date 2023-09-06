@@ -46,6 +46,10 @@ const Grievance = lazy(() => import('./Grievance/Grievance'));
 const Feedback = lazy(() => import('./Feedback/Feedback'));
 const LOAandEOA = lazy(() => import('./LOAandEOA/LOAandEOA'));
 
+const PrivacyPolicy = lazy(() => import('./PrivacyPolicy/PrivacyPolicy'));
+const TermsandConditions = lazy(() => import('./TermsandConditions/TermsandConditions'));
+const CancellationandRefundPolicy = lazy(() => import('./CancellationandRefundPolicy/CancellationandRefundPolicy'));
+
 
 const dontShowPopupOnTheseRoutes = [
     // ROUTES["FAQS"],
@@ -143,6 +147,9 @@ const PagesRoutes = () => {
             <Route exact path={ROUTES["GRIEVANCE"]} component={Grievance} />
             <Route exact path={ROUTES["FEEDBACK"]} component={Feedback} />
             <Route exact path={ROUTES["LOAANDEOA"]} component={LOAandEOA} />
+            <Route exact path={ROUTES["CancellationandRefundPolicy"]} component={CancellationandRefundPolicy} />
+            <Route exact path={ROUTES["PrivacyPolicy"]} component={PrivacyPolicy} />
+            <Route exact path={ROUTES["TermsandConditions"]} component={TermsandConditions} />
             <Route component={NotFound404} />
         </Switch>
     )

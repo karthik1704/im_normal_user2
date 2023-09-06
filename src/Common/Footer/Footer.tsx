@@ -95,6 +95,10 @@ const Footer = () => {
                 { title: "Faculty", href: ROUTES["FACULTY"] },
                 { title: "Placement Insights", href: ROUTES["PLACEMENT INSIGHTS"] },
                 { title: "Downloads", href: ROUTES["DOWNLOADS"] },
+                { title: "Cancellation & Refund Policy", href: ROUTES["CancellationandRefundPolicy"] },
+                { title: "Terms & Conditions", href: ROUTES["TermsandConditions"] },
+                
+
             ]
         } as QuickLinksData;
     }, [unhidePopupModal]);
@@ -110,6 +114,8 @@ const Footer = () => {
                 { title: "MBA (Bangalore University)", href: ROUTES["MBA (BANGALORE UNIVERSITY)"] },
                 { title: "Certificate Courses", href: ROUTES["CERTIFICATION COURSES"] },
                 { title: "Contact Us", href: ROUTES["CONTACT US"] },
+                { title: "Privacy Policy", href: ROUTES["PrivacyPolicy"] },
+
             ]
         } as QuickLinksData;
     }, []);
