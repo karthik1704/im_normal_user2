@@ -4,6 +4,7 @@ import SignupLoading from "./Signup"
 import GetUserProfileLoading from "./GettingUserProfile"
 import PatchUserProfileLoading from "./PatchingUserProfile"
 import Loading from "./Loading/Loading"
+import PaymentLoading from "./PaymentLoading/PaymentLoading"
 
 export const LOADING_SCREEN = {
     "SIGNIN": "SIGNIN",
@@ -12,6 +13,7 @@ export const LOADING_SCREEN = {
     "GET_USER": "GET_USER",
     "PATCH_USER": "PATCH_USER",
     "LOADING": "LOADING",
+    "PAYMENTLOADING": "PAYMENTLOADING",
 }
 
 export interface ILoadingScreenUIParams {
@@ -25,6 +27,7 @@ export interface ILoadingScreenUIComponents {
     GET_USER: JSX.Element,
     PATCH_USER: JSX.Element,
     LOADING: JSX.Element,
+    PAYMENTLOADING: JSX.Element,
     [key: string]: JSX.Element,
 }
 
@@ -36,6 +39,7 @@ const LoadingScreenUI = ({name}: ILoadingScreenUIParams) => {
         GET_USER: <GetUserProfileLoading />,
         PATCH_USER: <PatchUserProfileLoading />,
         LOADING: <Loading />,
+        PAYMENTLOADING: <PaymentLoading/>,
     }
     return (
         <>

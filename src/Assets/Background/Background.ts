@@ -22,3 +22,4 @@ export * from "./InternationalAssociations/InternationalAssociations";
 export * from "./LearningEnvironment/LearningEnvironment";
 export * from "./PlacementSnapshots/PlacementSnapshots";
 export * from "./Common/Common";
+export * from "./terms/terms";

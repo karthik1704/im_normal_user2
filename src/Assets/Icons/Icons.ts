@@ -7,7 +7,8 @@ import Medal from "./Images/medal.svg";
 import Pay from "./Images/pay.svg";
 import RankingPodium from "./Images/ranking_podium.svg";
 import RankingSheet from "./Images/ranking_sheet.svg";
+import Invoice from "./Images/invoice.png";
 
 export {
-    GPlus, ProfilePicHolderMan, ProfilePicHolderWoman, Deal, Medal, MedalFirst, Pay, RankingPodium, RankingSheet
+    GPlus, ProfilePicHolderMan, ProfilePicHolderWoman, Deal, Medal, MedalFirst, Pay, RankingPodium, RankingSheet, Invoice
 }

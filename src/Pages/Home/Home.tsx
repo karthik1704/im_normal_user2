@@ -9,6 +9,8 @@ import './Home.scss';
 import { AchievementCounter, CommonImg, GlobalAffiliations, GlobalOrientation, InternationalExchange, PagedInfo, Programs, SplideSlide, SplideSlider, YoutubeEmbed } from '../../Common/Components/Components';
 import { SplideOptions } from '@splidejs/splide';
 
+import { InfoModal } from './InfoModal';
+
 const HomeSocialIFrames = () => {
     const [counter, setCounter] = useState(0);
     // const [timer, setTimer] = useState<NodeJS.Timeout | undefined>(undefined);
@@ -104,6 +106,7 @@ const Home = () => {
                 <title>Home</title>
                 <meta name="description" content="Home"/>
             </Helmet>
+            <InfoModal/>
             <div className={"home"}>
                 {/* <Social /> */}
                 <div className={""}>

@@ -49,6 +49,10 @@ const LOAandEOA = lazy(() => import('./LOAandEOA/LOAandEOA'));
 const PrivacyPolicy = lazy(() => import('./PrivacyPolicy/PrivacyPolicy'));
 const TermsandConditions = lazy(() => import('./TermsandConditions/TermsandConditions'));
 const CancellationandRefundPolicy = lazy(() => import('./CancellationandRefundPolicy/CancellationandRefundPolicy'));
+const PaymentSuccess = lazy(() => import('./PaymentSuccess/PaymentSuccess'));
+const PaymentFailure = lazy(() => import('./PaymentFailure/PaymentFailure'));
+const PaymentCallback = lazy(() => import('./PaymentCallback/PaymentCallback'));
+const Payment = lazy(() => import('./Payment/Payment'));
 
 
 const dontShowPopupOnTheseRoutes = [
@@ -150,6 +154,10 @@ const PagesRoutes = () => {
             <Route exact path={ROUTES["CancellationandRefundPolicy"]} component={CancellationandRefundPolicy} />
             <Route exact path={ROUTES["PrivacyPolicy"]} component={PrivacyPolicy} />
             <Route exact path={ROUTES["TermsandConditions"]} component={TermsandConditions} />
+            <Route exact path={ROUTES["PaymentSuccess"]} component={PaymentSuccess} />
+            <Route exact path={ROUTES["PaymentFailure"]} component={PaymentFailure} />
+            <Route exact path={ROUTES["PaymentCallback"]} component={PaymentCallback} />
+            <Route exact path={ROUTES["Payment"]} component={Payment} />
             <Route component={NotFound404} />
         </Switch>
     )

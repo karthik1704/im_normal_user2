@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { PageLocation } from "../../Common/Components/Components";
+import { Terms } from "../../Assets/Assets";
 import "./TermsandConditions.scss";
 
 const TermsandConditions = () => {
@@ -12,6 +13,7 @@ const TermsandConditions = () => {
       <PageLocation
         locations={["HOME", "Terms and Conditions"]}
         title={"Terms and Conditions"}
+        img={Terms}
       />
       <div className={"cancellation"}>
         <div className="col-wrapper-24 ">
@@ -34,7 +36,7 @@ const TermsandConditions = () => {
               such limitations. No advice or information, whether oral or
               written, obtained by you from us through the site shall create any
               warranty, representation or guarantee not expressly stated in this
-              agreement.
+              agreement. AIMS IBS Business School is managed by Acliv Foundation Trust and Vidyasaadhana Trust.
             </p>
           </div>{" "}
         </div>

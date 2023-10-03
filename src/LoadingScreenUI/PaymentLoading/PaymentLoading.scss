@@ -1,0 +1,23 @@
+.loading {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex; justify-content: center; align-items: center;
+
+    .bar {
+        width: 50%;
+        position: relative;
+        background-color: #133d91;
+        height: 3px;
+
+        overflow: hidden;
+
+        .inner-bar {
+            position: relative;
+            background-color: #f4511e;
+            width: 25%; height: 100%;
+
+            transform: translateX(-100%);
+        }
+    }
+}

@@ -91,6 +91,10 @@ const ROUTES = {
   CancellationandRefundPolicy: "/cancellationandrefundpolicy",
   TermsandConditions: "/termsandconditions",
   PrivacyPolicy: "/privacypolicy",
+  PaymentSuccess: "/payment/success",
+  PaymentFailure: "/payment/failure",
+  Payment: "/payment",
+  PaymentCallback: "/payment/return",
 
   NOT_FOUND: "/404",
 };

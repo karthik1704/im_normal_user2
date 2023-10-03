@@ -1,0 +1,22 @@
+.common-form {
+    .footer-form-input {
+        margin: 2em 0;
+    }
+    .error-div {
+        p {
+            color: white;
+        }
+    }
+    .footer-form-send-button {
+        .button {
+            display: block;
+            margin: 0 auto;
+            padding-right: 0.8rem;
+        }
+    }
+    .notified-div {
+        h6 {
+            color: #000;
+        }
+    }
+}
