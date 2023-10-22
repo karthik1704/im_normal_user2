@@ -10,16 +10,36 @@ import { useQuery } from "../../Common/Hooks/Hooks";
 import { useDispatch, useSelector } from 'react-redux';
 import { hideAllPagePopupForm, unhideAllPagePopupForm } from '../../Store/Slices/App/AppSlice';
 import "./PaymentFailure.scss";
+import { faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 
+type Idata = {
+  id: string | null
+  message?:string | null
+} | null
 
 const PaymentFailure = () => {
   const query = useQuery();
   const dispatch = useDispatch();
+  const [data, setData] = useState<Idata>(null)
 
 
   useEffect(() => {
     dispatch(hideAllPagePopupForm())
 }, [dispatch]);
+
+  useEffect(()=>{
+    const d = query.get('d');
+  
+    if(d){
+       const  decode  =atob(d)
+       const data = JSON.parse(decode)
+      setData({
+        id: data.id ? data.id : null,
+        message: data?.message
+        
+      })
+    }
+  },[query])
 
   return (
     <>
@@ -33,8 +53,8 @@ const PaymentFailure = () => {
           <div className="mb-col-22 t-col-11 l-col-11 xl-col-8">
             <div className="card">
               <h4>Payment Failure</h4>
-              <p>Reason: </p>
-              <p>Transaction Id: xxxxxxxxxx </p>
+              <p>Reason: {data?.message} </p>
+              {data?.id && data.id !=='null' && <p>Transaction Id: <b>{data?.id }</b> </p>}
 
               <p>If money deducted, Please wait for 7 days.</p>
               <p>If money not credited in 7 days, please contact your bank for further enquiry</p>

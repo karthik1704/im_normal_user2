@@ -129,7 +129,7 @@ const PagesRoutes = () => {
             <Route exact path={ROUTES["PLACEMENT RECORDS"]} component={PlacementRecords} />
             <Route exact path={ROUTES["PLACEMENT RECRUITERS"]} component={PlacementRecruiters} />
             <Route exact path={ROUTES["ADMISSION PROCESS"]} component={AdmissionProcess} />
-            <Route exact path={ROUTES["PAY ONLINE"]} component={PayOnline} />
+            <Route exact path={ROUTES["PAY ONLINE"]} component={Payment} />
             <Route exact path={ROUTES["KEY DIFFERENTIATORS"]} component={KeyDifferentiators} />
             <Route exact path={ROUTES["RANKINGS CREDENTIALS OUR STRENGHTS"]} component={RankingsCredentialsOurStrengths} />
             <Route exact path={ROUTES["INDUSTRY RELEVANT CERTIFICATIONS"]} component={IndustryRelevantCertifications} />

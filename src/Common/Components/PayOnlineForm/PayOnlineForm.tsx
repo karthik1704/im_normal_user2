@@ -1,253 +1,283 @@
 import { useEffect, useState } from "react";
-import { IPayOnlineForm as IPOForm } from "../../Api/Form/Types/Form/Form";
-import {postPayOnlineForm, reset as resetPayOnlineForm} from "../../../Store/Slices/PayOnlineForm/PayOnlineFormSlice";
-import { useDispatch, useSelector } from "react-redux";
+
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 import "./PayOnlineForm.scss";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import ShortUniqueId from "short-unique-id";
+import { encryptAES } from "../../../Utils/aes";
 
-const ErrorDiv = ({errors, divClassName}: {errors: string[], divClassName?: string}) => {
-    return (
-        <>
-        {
-            errors.length ? (
-                <div className={`card-panel error-div ${divClassName} bg-red-a700`}>
-                    {
-                        errors.map((errorMsg, index) => {
-                            return (
-                                <p 
-                                    key={index}
-                                    className="t-align-center"
-                                >{errorMsg}</p>
-                            )
-                        })
-                    }
-                </div>
-            ) : null
-        }
-        </>
-    )
+const ErrorDiv = ({
+  errors,
+  divClassName,
+}: {
+  errors: string[];
+  divClassName?: string;
+}) => {
+  return (
+    <>
+      {errors.length ? (
+        <div className={`card-panel error-div ${divClassName} bg-red-a700`}>
+          {errors.map((errorMsg, index) => {
+            return (
+              <p key={index} className="t-align-center">
+                {errorMsg}
+              </p>
+            );
+          })}
+        </div>
+      ) : null}
+    </>
+  );
+};
+
+enum FeeTypeEnum {
+  AdmissionFee = "AdmissionFee",
+  TuitionFee = "TuitionFee",
+  LatePaymentFee = "LatePaymentFee",
+  LibraryFee = "LibraryFee",
 }
+
+const schema = yup
+  .object({
+    studentName: yup.string().required(),
+    rollNo: yup.string(),
+    course: yup.string().required(),
+    batch: yup.string().required(),
+    type: yup.mixed<FeeTypeEnum>().oneOf(Object.values(FeeTypeEnum)).required(),
+    amount: yup.number().required(),
+    phoneNumber: yup.number().min(10).required(),
+    upiVPA: yup.string(),
+    remarks: yup.string(),
+  })
+  .required();
+
+type Inputs = {
+  studentName: string;
+  rollNo?: string;
+  course: string;
+  batch: string;
+  type: FeeTypeEnum;
+  amount: number;
+  phoneNumber: number;
+  upiVPA?: string;
+  remarks?: string;
+};
 
 export interface IPayOnlineForm {
-    setFilledAtLeastOnce?: React.Dispatch<React.SetStateAction<boolean>> // used by popup form
-    formId: string,
-    closeSuccessMsgCallback?: () => void,
+  setFilledAtLeastOnce?: React.Dispatch<React.SetStateAction<boolean>>; // used by popup form
+  formId: string;
+  closeSuccessMsgCallback?: () => void;
 }
-export const PayOnlineForm = ({ setFilledAtLeastOnce, formId, closeSuccessMsgCallback}: IPayOnlineForm) => {
+export const PayOnlineForm = ({
+  formId,
+  closeSuccessMsgCallback,
+}: IPayOnlineForm) => {
+  const {
+    register,
+    handleSubmit,
+    formState,
+    formState: { isSubmitted, errors, },
+    reset
+  } = useForm<Inputs>({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      studentName: "",
+      rollNo: "",
+      batch: "",
+      course: "",
+      upiVPA: "",
+      remarks: "",
+    },
+  });
 
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [course, setCourse] = useState("");
-    const [amount, setAmount] = useState("");
-    const [address, setAddress] = useState("");
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    console.log(data);
+    let admissionFee = 0;
+    let tutitionFee = 0;
+    let libraryFee = 0;
+    let lateFeePayment = 0;
+    let PGAmount = 0;
 
-    const [emailSent, setEmailSent] = useState(false);
-
-    const dispatch = useDispatch();
-    const request = useSelector( (state: {payOnlineForm: IPOForm}) => state.payOnlineForm);
-
-    useEffect(() => {
-        if (request.request_states.post.fulfilled && formId === request.request_states.post.formId) {
-            setEmailSent(true);
-            setFirstName("")
-            setLastName("")
-            setEmail("")
-            setPhone("")
-            setCourse("")
-            setAmount("")
-            setAddress("")
-           
-        }
-        else {
-            setEmailSent(false)
-        }
-    }, [request.request_states.post.fulfilled,   formId, request.request_states.post.formId])
-   
-    const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFirstName(e.target.value);
-    }
-    const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setLastName(e.target.value);
-    }
-    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.target.value);
-    }
-    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPhone(e.target.value);
-    }
-    const handleCourse = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setCourse(e.target.value);
-    }
-    const handleAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setAmount(e.target.value);
-    }
-    const handleAddress = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setAddress(e.target.value);
+    switch (data.type) {
+      case "AdmissionFee":
+        admissionFee = data.amount;
+        break;
+      case "TuitionFee":
+        tutitionFee = data.amount;
+        break;
+      case "LibraryFee":
+        libraryFee = data.amount;
+        break;
+      case "LatePaymentFee":
+        lateFeePayment = data.amount;
+        break;
+      default:
+        PGAmount = data.amount;
     }
 
-    const handleFormSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        dispatch(resetPayOnlineForm());
-        dispatch(postPayOnlineForm({
-            email: email,
-            firstName: firstName,
-            lastName: lastName,
-            phone: phone,
-            course: course,
-            amount: amount,
-            address: address,
-           
-            formId: formId,
-        }));
+    const { randomUUID } = new ShortUniqueId({ length: 10 });
+    const referenceId = randomUUID();
+    const merchantId = 378350;
+    const subMerchantId = "25";
+    let { studentName, rollNo, course, batch, phoneNumber, upiVPA, remarks } =
+      data;
+
+
+    if (rollNo === "") rollNo = "x";
+    if (upiVPA === "") upiVPA = "x";
+    if (remarks === "") remarks = "x";
+
+    const manatoryFields = `${referenceId}|${subMerchantId}|${PGAmount}|${studentName}|${course}|${batch}|${upiVPA}|${phoneNumber}`;
+    const optionFields = `${rollNo}|${admissionFee}|${tutitionFee}|${lateFeePayment}|${libraryFee}|${remarks}`;
+    const transactionAmount = data.amount.toString();
+
+    const url = `https://eazypay.icicibank.com/EazyPG?merchantid=${merchantId}&mandatory fields=${await encryptAES(
+      manatoryFields
+    )}&optional fields=${await encryptAES(
+      optionFields
+    )}&returnurl=${await encryptAES(
+      "https://normal-user-api.aimsibs.com/payment/verify/"
+    )}&Reference No=${await encryptAES(
+      referenceId
+    )}&submerchantid=${await encryptAES(
+      subMerchantId
+    )}&transaction amount=${await encryptAES(
+      transactionAmount
+    )}&paymode=${await encryptAES("9")}`;
+    console.log(url);
+    window.open(url, "_blank");
+  };
+
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset();
     }
+  }, [formState,isSubmitted, reset]);
 
+  return (
+    <>
+      <form className={"common-form"} onSubmit={handleSubmit(onSubmit)}>
+        <div className="input-div icon footer-form-input">
+          <input
+            id={`${formId}-form-student_name`}
+            className="border-black "
+            type="text"
+            placeholder=" "
+            {...register("studentName", { required: true })}
+          />
+          <label htmlFor={`${formId}-form-student_name`}>Student Name *</label>
+          <i className="material-icons">perm_identity</i>
+        </div>
 
+        <div className="input-div icon footer-form-input">
+          <input
+            id={`${formId}-form-rollNo`}
+            className="border-black "
+            type="text"
+            placeholder=" "
+            {...register("rollNo", { required: false })}
+          />
+          <label htmlFor={`${formId}-form-name`}>Roll Number</label>
+          <i className="material-icons">perm_identity</i>
+        </div>
 
-    return (
-        <>
-        <form className={"common-form"} onSubmit={handleFormSubmit}>
-            {
-                (emailSent) &&
-                    <div className={"notified-div"}>
-                        <h6 className={"t-align-center"}>
-                            We have been notified. Thank you for filling out the form!
-                        </h6>
-                    </div>
-            }
+        <div className="input-div icon footer-form-input">
+          <input
+            id={`${formId}-form-course`}
+            className="border-black "
+            type="text"
+            placeholder=" "
+            {...register("course", { required: true })}
+          />
+          <label htmlFor={`${formId}-form-contact`}>Course *</label>
+          <i className="material-icons">batch_prediction</i>
+        </div>
 
-            { formId === request.request_states.post.formId && (
-                <ErrorDiv errors={request.detail.validation_errors.firstName}/>
-            )}
-            <div className="input-div icon footer-form-input">
-                <input 
-                    id={`${formId}-footer-form-first_name`}
-                    className="border-black " 
-                    type="text" 
-                    placeholder=" " 
-                    value={firstName}
-                    onChange={handleFirstNameChange}
-                    required
-                />
-                <label htmlFor={`${formId}-footer-form-name`}>First Name *</label>
-                <i className="material-icons">perm_identity</i>
-            </div>
+        <div className="input-div icon footer-form-input">
+          <input
+            id={`${formId}-form-batch`}
+            className="border-black "
+            type="text"
+            placeholder=" "
+            {...register("batch", { required: true })}
+          />
+          <label htmlFor={`${formId}-form-batch`}>Batch Year *</label>
+          <i className="material-icons">batch_prediction</i>
+        </div>
 
-            { formId === request.request_states.post.formId && (
-                <ErrorDiv errors={request.detail.validation_errors.lastName}/>
-            )}
-            <div className="input-div icon footer-form-input">
-                <input 
-                    id={`${formId}-footer-form-last_name`}
-                    className="border-black " 
-                    type="text" 
-                    placeholder=" " 
-                    value={lastName}
-                    onChange={handleLastNameChange}
-                    required
-                />
-                <label htmlFor={`${formId}-footer-form-name`}>Last Name *</label>
-                <i className="material-icons">perm_identity</i>
-            </div>
+        <div className="input-div icon footer-form-input">
+          <select
+            id={`${formId}-form-type`}
+            className="border-black "
+            {...register("type", { required: true })}
+          >
+            <option value={""}>--Select Fee Type--</option>
+            <option value={"AdmissionFee"}>Admission Fee</option>
+            <option value={"TuitionFee"}>Tuition Fee</option>
+            <option value={"LibraryFee"}>Library Fee</option>
+            <option value={"LatePaymentFee"}>Late Payment Fee</option>
+          </select>
+          {/* <label htmlFor={`${formId}-form-type`}>Amount. *</label> */}
+          {/* <i className="material-icons">payments</i> */}
+        </div>
 
+        <div className="input-div icon footer-form-input">
+          <input
+            id={`${formId}-form-amount`}
+            className="border-black "
+            type="text"
+            placeholder=" "
+            {...register("amount", { required: true })}
+          />
+          <label htmlFor={`${formId}-form-amount`}>Amount. *</label>
+          <i className="material-icons">payments</i>
+        </div>
 
-            { formId === request.request_states.post.formId && (
-                <ErrorDiv errors={request.detail.validation_errors.email}/>
-            )}            
-            <div className="input-div icon footer-form-input">
-                <input 
-                    id={`${formId}-footer-form-email`}
-                    className="border-black " 
-                    type="text" 
-                    placeholder=" "
-                    value={email}
-                    onChange={handleEmailChange}
-                    required
-                />
-                <label htmlFor={`${formId}-footer-form-email`}>Email ID *</label>
-                <i className="material-icons">email</i>
-            </div>
-            
-            { formId === request.request_states.post.formId && (
-                <ErrorDiv errors={request.detail.validation_errors.phone}/>
-            )} 
-            <div className="input-div icon footer-form-input">
-                <input 
-                    id={`${formId}-footer-form-contact`}
-                    className="border-black " 
-                    type="number" 
-                    placeholder=" "
-                    value={phone}
-                    onChange={handlePhoneChange}
-                    required
-                />
-                <label htmlFor={`${formId}-footer-form-contact`}>Contact No. *</label>
-                <i className="material-icons">phone</i>
-            </div>
+        <div className="input-div icon footer-form-input">
+          <input
+            id={`${formId}-form-contact`}
+            className="border-black "
+            type="number"
+            placeholder=" "
+            {...register("phoneNumber", { required: true })}
+          />
+          <label htmlFor={`${formId}-form-contact`}>Contact No. *</label>
+          <i className="material-icons">phone</i>
+        </div>
 
-            { formId === request.request_states.post.formId && (
-                <ErrorDiv errors={request.detail.validation_errors.course}/>
-            )} 
-            <div className="input-div icon footer-form-input">
-                <input 
-                    id={`${formId}-footer-form-course`}
-                    className="border-black " 
-                    type="text" 
-                    placeholder=" "
-                    value={course}
-                    onChange={handleCourse}
-                    required
-                />
-                <label htmlFor={`${formId}-footer-form-contact`}>Course and batch. *</label>
-                <i className="material-icons">batch_prediction</i>
-            </div>
+        <div className="input-div icon footer-form-input">
+          <input
+            id={`${formId}-form-upiVPA`}
+            className="border-black "
+            type="text"
+            placeholder=" "
+            {...register("upiVPA", { required: false })}
+          />
+          <label htmlFor={`${formId}-form-upiVPA`}>UPI Address</label>
+          {/* <i className="material-icons"></i> */}
+        </div>
 
-            { formId === request.request_states.post.formId && (
-                <ErrorDiv errors={request.detail.validation_errors.amount}/>
-            )}
-            <div className="input-div icon footer-form-input">
-                <input 
-                    id={`${formId}-footer-form-amount`}
-                    className="border-black " 
-                    type="text" 
-                    placeholder=" " 
-                    value={amount}
-                    onChange={handleAmount}
-                    required
-                />
-                <label htmlFor={`${formId}-footer-form-location`}>Amount. *</label>
-                <i className="material-icons">payments</i>
-            </div>
+        <div className="input-div icon footer-form-input">
+          <input
+            id={`${formId}-form-remarks`}
+            className="border-black "
+            type="text"
+            placeholder=""
+            {...register("remarks", { required: false })}
+          />
+          <label htmlFor={`${formId}-form-remarks`}>Remarks</label>
+          {/* <i className="material-icons"></i> */}
+        </div>
 
-            { formId === request.request_states.post.formId && (
-                <ErrorDiv errors={request.detail.validation_errors.address}/>
-            )}
-            <div className="input-div icon footer-form-input">
-                <textarea 
-                    id={`${formId}-footer-form-address`}
-                    className="border-black " 
-                    placeholder=" " 
-                    value={address}
-                    onChange={handleAddress}
-                    rows={3}
-                    required
-                ></textarea>
-                <label htmlFor={`${formId}-footer-form-location`}>Address. *</label>
-                <i className="material-icons">location_city</i>
-
-            </div>
-
-            <div className="footer-form-send-button">
-                <button
-                    className="button bg-deep-orange-600"
-                    type="submit"
-                >
-                    SUBMIT <i className={"material-icons"}>arrow_right_alt</i>
-                </button>
-            </div>
-        </form>
-      
-        </>    
-    )
-}
+        <div className="footer-form-send-button">
+          <button className="button bg-deep-orange-600" type="submit">
+            SUBMIT <i className={"material-icons"}>arrow_right_alt</i>
+          </button>
+        </div>
+      </form>
+    </>
+  );
+};

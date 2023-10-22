@@ -1,12 +1,12 @@
 import CryptoJS from "crypto-js";
 
-const AES_KEY = "1234567891234567";
+const AES_KEY = "3702971083505006";
 
 // Input plain text
-const plaintext = "9";
-const encryptedText = "nFRjDWSCg0m80aUYivDlqw==";
+// const plaintext = "9";
+// const encryptedText = "nFRjDWSCg0m80aUYivDlqw==";
 
-export const encryptAES = async () => {
+export const encryptAES = async (plaintext) => {
   try {
     // Encrypt the plain text
     const encryptedText = CryptoJS.AES.encrypt(
@@ -28,7 +28,7 @@ export const encryptAES = async () => {
   }
 };
 
-export const decryptAES = async () => {
+export const decryptAES = async (encryptedText) => {
   try {
     // Encrypt the plain text
     const decryptText = CryptoJS.AES.decrypt(

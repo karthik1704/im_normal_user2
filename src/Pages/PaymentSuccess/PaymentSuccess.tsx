@@ -13,16 +13,38 @@ import { hideAllPagePopupForm, unhideAllPagePopupForm } from '../../Store/Slices
 
 import "./PaymentSuccess.scss";
 
+
+type Idata = {
+  id: string | null
+  message?:string | null
+} | null
+
+
 const PaymentSuccess = () => {
  const  query = useQuery();
 
  
  const dispatch = useDispatch();
+ const [data, setData] = useState<Idata>(null)
 
 
   useEffect(() => {
     dispatch(hideAllPagePopupForm())
 }, [dispatch]);
+
+useEffect(()=>{
+  const d = query.get('d');
+
+  if(d){
+     const  decode  =atob(d)
+     const data = JSON.parse(decode)
+    setData({
+      id: data.id ? data.id : null,
+      message: data?.message
+      
+    })
+  }
+},[query])
 
 
 
@@ -40,8 +62,8 @@ const PaymentSuccess = () => {
             <div className="card">
               <img src={Invoice} alt="Payment success" height={"100px"} width={"100px"}/>
               <h4>Payment Success</h4>
-              <p>We have recived your payment - Name </p>
-              <p>Transaction Id: xxxxxxxxxx </p>
+              <p>We have recived your payment </p>
+              <p>Transaction Id: {data?.id} </p>
 
              
             </div>

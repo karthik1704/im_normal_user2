@@ -15,6 +15,7 @@ import ProgramsJpg from "./Images/programs.jpg";
 import TestimonialsJpg from "./Images/testimonials.jpg";
 import WhyAimsIbsTwoJpg from "./Images/why_aims_ibs_2.jpg";
 import WhyAimsIbsJpg from "./Images/why_aims_ibs.jpg";
+import PaybannerPng from "./Images/paybanner.png";
 
 import AboutUsWebp from "./Images/about_us.webp";
 import AdmissionsWebp from "./Images/admissions.webp";
@@ -31,6 +32,7 @@ import ProgramsWebp from "./Images/programs.webp";
 import TestimonialsWebp from "./Images/testimonials.webp";
 import WhyAimsIbsTwoWebp from "./Images/why_aims_ibs_2.webp";
 import WhyAimsIbsWebp from "./Images/why_aims_ibs.webp";
+import PaybannerWebp from "./Images/paybanner.webp";
 
 
 export const CommonAboutUs: IImage = {type: "jpg", alt: "", jpg: AboutUsJpg, webp: AboutUsWebp, w: 6720, h: 4480};
@@ -48,3 +50,4 @@ export const CommonPrograms: IImage = {type: "jpg", alt: "", jpg: ProgramsJpg, w
 export const CommonTestimonials: IImage = {type: "jpg", alt: "", jpg: TestimonialsJpg, webp: TestimonialsWebp, w: 960, h: 720};
 export const CommonWhyAimsIbsTwo: IImage = {type: "jpg", alt: "", jpg: WhyAimsIbsTwoJpg, webp: WhyAimsIbsTwoWebp, w: 6720, h: 4480};
 export const CommonWhyAimsIbs: IImage = {type: "jpg", alt: "", jpg: WhyAimsIbsJpg, webp: WhyAimsIbsWebp, w: 6720, h: 4480};
+export const CommonPayment: IImage = {type: "png", alt: "", png: PaybannerPng, webp: PaybannerWebp, w: 1354, h: 350};

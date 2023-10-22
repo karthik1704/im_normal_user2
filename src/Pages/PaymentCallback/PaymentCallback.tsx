@@ -12,6 +12,7 @@ import { hideAllPagePopupForm, unhideAllPagePopupForm } from '../../Store/Slices
 
 import "./PaymentCallback.scss";
 import LoadingScreenUI from "../../LoadingScreenUI/LoadingScreenUI";
+import { useParams } from "react-router-dom";
 
 interface ResponseParams {
   ResponseCode: String
@@ -19,6 +20,7 @@ interface ResponseParams {
 
 const PaymentCallback = () => {
   const query = useQuery()
+  const params = useParams()
 
   const dispatch = useDispatch();
 
@@ -30,6 +32,9 @@ const PaymentCallback = () => {
 
   useEffect(() => {
     console.log(query)
+    console.log('params',params)
+
+  
     // if (query?.ResponseCode === 'E000'){
 
     // } 
