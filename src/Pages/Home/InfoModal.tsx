@@ -27,7 +27,7 @@ export const InfoModal = () => {
             <div className={"content"}>
               <div>
                 <p className={"sub-heading t-align-center"}>
-                  Admissions closed for the <strong>Year 2023-25</strong>.
+                  Admissions opened for the <strong>Year 2024-26</strong>.
                 </p>
               </div>
             </div>

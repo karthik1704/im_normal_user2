@@ -46,9 +46,16 @@ const schema = yup
     rollNo: yup.string(),
     course: yup.string().required(),
     batch: yup.string().required(),
-    type: yup.mixed<FeeTypeEnum>().oneOf(Object.values(FeeTypeEnum)).required(),
-    amount: yup.number().required(),
-    phoneNumber: yup.number().min(10).required(),
+    type: yup
+      .mixed<FeeTypeEnum>()
+      .oneOf(Object.values(FeeTypeEnum), "Please select fee type")
+      .required(),
+    amount: yup.number().typeError("Enter valid amount").required(),
+    phoneNumber: yup
+      .number()
+      .typeError("Enter Valid Phone Number")
+      .min(10)
+      .required(),
     upiVPA: yup.string(),
     remarks: yup.string(),
   })
@@ -79,8 +86,8 @@ export const PayOnlineForm = ({
     register,
     handleSubmit,
     formState,
-    formState: { isSubmitted, errors, },
-    reset
+    formState: { isSubmitted, errors },
+    reset,
   } = useForm<Inputs>({
     resolver: yupResolver(schema),
     defaultValues: {
@@ -125,7 +132,6 @@ export const PayOnlineForm = ({
     let { studentName, rollNo, course, batch, phoneNumber, upiVPA, remarks } =
       data;
 
-
     if (rollNo === "") rollNo = "x";
     if (upiVPA === "") upiVPA = "x";
     if (remarks === "") remarks = "x";
@@ -155,7 +161,7 @@ export const PayOnlineForm = ({
     if (formState.isSubmitSuccessful) {
       reset();
     }
-  }, [formState,isSubmitted, reset]);
+  }, [formState, isSubmitted, reset]);
 
   return (
     <>
@@ -170,6 +176,11 @@ export const PayOnlineForm = ({
           />
           <label htmlFor={`${formId}-form-student_name`}>Student Name *</label>
           <i className="material-icons">perm_identity</i>
+          {errors.studentName && (
+            <p role="alert" className="bg-red-a700">
+              {errors.studentName.message}
+            </p>
+          )}
         </div>
 
         <div className="input-div icon footer-form-input">
@@ -182,6 +193,11 @@ export const PayOnlineForm = ({
           />
           <label htmlFor={`${formId}-form-name`}>Roll Number</label>
           <i className="material-icons">perm_identity</i>
+          {errors.rollNo && (
+            <p role="alert" className="bg-red-a700">
+              {errors.rollNo.message}
+            </p>
+          )}
         </div>
 
         <div className="input-div icon footer-form-input">
@@ -194,6 +210,11 @@ export const PayOnlineForm = ({
           />
           <label htmlFor={`${formId}-form-contact`}>Course *</label>
           <i className="material-icons">batch_prediction</i>
+          {errors.course && (
+            <p role="alert" className="bg-red-a700">
+              {errors.course.message}
+            </p>
+          )}
         </div>
 
         <div className="input-div icon footer-form-input">
@@ -206,12 +227,20 @@ export const PayOnlineForm = ({
           />
           <label htmlFor={`${formId}-form-batch`}>Batch Year *</label>
           <i className="material-icons">batch_prediction</i>
+          {errors.batch && (
+            <p role="alert" className="bg-red-a700">
+              {errors.batch.message}
+            </p>
+          )}
         </div>
 
-        <div className="input-div icon footer-form-input">
+        <div
+          className="input-div icon footer-form-input"
+        >
           <select
             id={`${formId}-form-type`}
             className="border-black "
+            title="type"
             {...register("type", { required: true })}
           >
             <option value={""}>--Select Fee Type--</option>
@@ -222,8 +251,18 @@ export const PayOnlineForm = ({
           </select>
           {/* <label htmlFor={`${formId}-form-type`}>Amount. *</label> */}
           {/* <i className="material-icons">payments</i> */}
+         
         </div>
-
+        {errors.type && (
+            <p
+              role="alert"
+              style={{
+              }}
+              className="bg-red-a700"
+            >
+              {errors.type.message}
+            </p>
+          )}
         <div className="input-div icon footer-form-input">
           <input
             id={`${formId}-form-amount`}
@@ -234,6 +273,11 @@ export const PayOnlineForm = ({
           />
           <label htmlFor={`${formId}-form-amount`}>Amount. *</label>
           <i className="material-icons">payments</i>
+          {errors.amount && (
+            <p role="alert" className="bg-red-a700">
+              {errors.amount.message}
+            </p>
+          )}
         </div>
 
         <div className="input-div icon footer-form-input">
@@ -246,6 +290,11 @@ export const PayOnlineForm = ({
           />
           <label htmlFor={`${formId}-form-contact`}>Contact No. *</label>
           <i className="material-icons">phone</i>
+          {errors.phoneNumber && (
+            <p role="alert" className="bg-red-a700">
+              {errors.phoneNumber.message}
+            </p>
+          )}
         </div>
 
         <div className="input-div icon footer-form-input">
@@ -258,6 +307,11 @@ export const PayOnlineForm = ({
           />
           <label htmlFor={`${formId}-form-upiVPA`}>UPI Address</label>
           {/* <i className="material-icons"></i> */}
+          {errors.upiVPA && (
+            <p role="alert" className="bg-red-a700">
+              {errors.upiVPA.message}
+            </p>
+          )}
         </div>
 
         <div className="input-div icon footer-form-input">
@@ -270,6 +324,11 @@ export const PayOnlineForm = ({
           />
           <label htmlFor={`${formId}-form-remarks`}>Remarks</label>
           {/* <i className="material-icons"></i> */}
+          {errors.remarks && (
+            <p role="alert" className="bg-red-a700">
+              {errors.remarks.message}
+            </p>
+          )}
         </div>
 
         <div className="footer-form-send-button">
