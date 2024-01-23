@@ -5,14 +5,15 @@ interface YoutubeEmbedParams {
     link: string,
     title: string,
     id: string,
+    height?:string
 }
 
-const YoutubeEmbed = ({link, title, id}: YoutubeEmbedParams) => {
+const YoutubeEmbed = ({link, title, id, height='315'}: YoutubeEmbedParams) => {
 
     return (
         <div className={"youtube-embed"}>
             <iframe 
-                height={"315"}
+                height={height}
                 src={link} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
                 style={
