@@ -25,6 +25,25 @@
             }
         }
     }
+    .blink{  
+        font-size: 1.5rem;  
+        font-weight: 400;  
+        animation: blinkanimate 2s linear infinite;  
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        }  
+          
+        @keyframes blinkanimate{  
+        0%{  
+            opacity: 0;  
+        }  
+        50%{  
+            opacity: 0.6;  
+        }  
+        100%{  
+            opacity: 0;  
+        }  
+        }  
 }
 
 .header {

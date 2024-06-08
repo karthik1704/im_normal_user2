@@ -6,7 +6,7 @@ import { JSXModal } from "../../Utils/js/Utils";
 import { IApp } from "../../Store/Slices/App/AppSlice";
 
 export const InfoModal = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const app = useSelector((state: {app: IApp}) => state.app);
 
 
